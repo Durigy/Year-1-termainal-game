@@ -1,4 +1,3 @@
-
 def access_code_minigame():
         
     import random
@@ -28,6 +27,7 @@ def access_code_minigame():
                     guesses = 4
                     number = str(number)
                     access_code = str(access_code) + number
+                    print("Looks like we have worked out:" + access_code)
                     number = int(number)
                     if run == 4:
                         completed = True
