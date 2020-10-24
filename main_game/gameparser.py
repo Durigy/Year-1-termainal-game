@@ -1,15 +1,19 @@
 import string
 
-skip_words = []
+specialised_words = ["go", "take","drop","look","open","close","enter","leave","menu","eat","north","east","south","west","inventory","use"]
 
-def filter_words(words, skip_words):
-    for word in words[:]:
-        for sWord in skip_words:
-            if word == sWord:
-                words.remove(word)
+def filter_words(words, sprecialised_words):
+    filtered = []
+    for word in words:
+        if word in specialised_words:
+            filtered.append(word)
+    
+    words = filtered
     return words
+
     
 def remove_punct(text):
+    punct = '''!()@£$%&*-+_€\|][}{.,`~:;'''
     no_punct = ""
     for char in text:
         if not (char in string.punctuation):
@@ -19,4 +23,6 @@ def remove_punct(text):
 
 def normalise_input(user_input):
     # Remove punctuation and convert to lower case
-    return remove_punct(user_input).lower()
+    words = remove_punct(user_input).lower()
+    filtered_words = filter_words((words).split(), specialised_words)
+    return filtered_words
