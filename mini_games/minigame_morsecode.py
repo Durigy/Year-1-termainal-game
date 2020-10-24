@@ -1,6 +1,6 @@
 #placeholder for the room that the player is supposed to go to next
 next_room="Herod Close"
-#placeholder list of the rooms and corresponding morse codes for the rooms
+#list of the rooms and corresponding morse codes for the rooms
 morse_roomlist=["herod close",".... . .-. --- -.. / -.-. .-.. --- ... .","herod street",".... . .-. --- -.. / ... - .-. . . -","carpark","-.-. .- .-. .--. .- .-. -.-","labratory 1",".-.. .- -... --- .-. .- - --- .-. -.-- / .----","main street","-- .- .. -. / ... - .-. . . -","shop","... .... --- .--.","the plough","- .... . / .--. .-.. --- ..- --. ....","alleyway",".- .-.. .-.. . -.-- .-- .- -.--","isiah road",".. ... .. .- .... / .-. --- .- -..","laboratory 2",".-.. .- -... --- .-. .- - --- .-. -.-- / ..---","willow park",".-- .. .-.. .-.. --- .-- / .--. .- .-. -.-","windy path",".-- .. -. -.. -.-- / .--. .- - ....","library",".-.. .. -... .-. .- .-. -.--"]
 print("A	.-		B	-...\nC	-.-.	D	-..\nE	.		F	..-.\nG	--.		H	....\nI	..		J	.---\nK	-.-		L	.-..\nM	--		N	-.\nO	---		P	.--.\nQ	--.-	R	.-.\nS	...		T	-\nU	..-		V	...-\nW	.--		X	-..-\nY	-.--	Z	--..\n1.----	2	..---\nSPACE	/\n\n\nIf you answer incorrectly, you will be prompted to answer again.\nUse the above table to translate the following:")
 #searches for the next room in the list above and sets a variable to the element's position in the list
