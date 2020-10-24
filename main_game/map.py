@@ -5,7 +5,7 @@ road_library = {
 
     "description":
     """You are in a littered, dimly lit street;
-blood plastered along the wall of Labratory 1.
+blood plastered along the wall of Laboratory 1.
 The Library - boarded up in an attempt to keep
 the hoards out. They needn't bother, though, as
 the end of the street is blocked off with a large,
@@ -27,7 +27,7 @@ life beyond surival is non-existent.
 You can make your way to Lab 1, the carpark or turn
 onto Main Street.""",
 
-    "exits":  {"carpark": "Carpark", "lab 1": "Labratory 1", "main street": "Main Street"},
+    "exits":  {"carpark": "Carpark", "lab 1": "Laboratory 1", "main street": "Main Street"},
 
     "items": []
 
@@ -44,7 +44,7 @@ necessities have been stripped from them.
 You can go into Lab 1 through the side entrance,
 or make your way back to Herod Street.""",
 
-    "exits": {"lab 1": "Labratory 1", "herod street": "Herod Street"},
+    "exits": {"lab 1": "Laboratory 1", "herod street": "Herod Street"},
 
     "items": [],
 
@@ -52,7 +52,7 @@ or make your way back to Herod Street.""",
 }
 
 room_lab1 = {
-    "name": "Labratory 1",
+    "name": "Laboratory 1",
 
     "description":
     """You are now in the Lab 1 building,
@@ -152,7 +152,7 @@ You can either enter Lab 2, if you have the necessary
 passcode, enter the park or go down a windy path behind
 the houses.""",
 
-    "exits": {"lab 2": "Labratory 2", "park": "Willow Park", "windy path": "Windy Path"},
+    "exits": {"lab 2": "Laboratory 2", "park": "Willow Park", "windy path": "Windy Path"},
 
     "items": []
 
@@ -160,7 +160,7 @@ the houses.""",
 }
 
 room_lab2 = {
-    "name": "Labratory 2",
+    "name": "Laboratory 2",
 
     "description":
     """Standing in Lab 2, which is well-lit and tidy,
@@ -234,7 +234,7 @@ entrance has been boardered up.""",
 rooms_roads = {
     "Herod Close": road_library,
     "Herod Street": road_lab1,
-    "Labratory 1": room_lab1,
+    "Laboratory 1": room_lab1,
     "Carpark": room_carpark,
     "Main Street": road_public,
     "Shop": room_shop,
@@ -242,7 +242,7 @@ rooms_roads = {
     "Alleyway": room_alleyway
     "Isiah Road": road_lab2,
     "Willow Park": room_park,
-    "Labratory 2": room_lab2,
+    "Laboratory 2": room_lab2,
     "Windy Path": road_windy,
     "Library": room_library
 }
