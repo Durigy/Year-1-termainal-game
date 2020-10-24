@@ -39,17 +39,18 @@ def aquire_guess(guessed):
             print('Please enter a letter')
         else:
             return guess
-def play_again():
-    global play
-    print_hangman()
 
-    play_this = input('Do you want to try again (yes/no): ')
-
-    if play_this == 'yes':
-        print('Good Luck')
-
-    else:
-        play = False
+# def play_again():
+#     global play
+#     print_hangman()
+#
+#     play_this = input('Do you want to try again (yes/no): ')
+#
+#     if play_this == 'yes':
+#         print('Good Luck')
+#
+#     else:
+#         play = False
 
 words = ["asdfghjkl"]
 
@@ -175,7 +176,12 @@ picture = [
 
 ''
 ]
-def fun():
+def func():
+    global guesses
+    global missing_letters
+    global correct_letters
+    global secret_word
+    global game_over
     guesses = 0
     missing_letters = ''
     correct_letters = ''
@@ -183,13 +189,12 @@ def fun():
     game_over = False
 
 def hang_game():
-    print('\n' * 10)
-    print('Lets Go')
     global guesses
     global missing_letters
     global correct_letters
     global secret_word
     global game_over
+
     while guesses < 7:
         Showcase(missing_letters, correct_letters, secret_word)
         guess = aquire_guess(missing_letters + correct_letters)
@@ -217,6 +222,9 @@ def hang_game():
                 Showcase(missing_letters, correct_letters, secret_word)
                 print("\n", 'You have ran out of guesses, you have had', len(missing_letters), 'missed guesses and', len(correct_letters), 'correct guess.')
                 print(secret_word)
-    play_again()
+                hang_game()
+                func()
+                return False
+    return True
 
 hang_game()
