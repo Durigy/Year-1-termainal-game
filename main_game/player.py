@@ -1,8 +1,6 @@
 from items import *
 from map import rooms
-
-from items import *
-from map import rooms
+from map import roads
 
 #inventory = [item_id, item_laptop, item_money]
 

@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
-from map import rooms
-from player import *
-from items import *
-from gameparser import *
+from main_game import rooms
+from main_game import characters
+from main_game import tools
+from main_game import food
+from main_game import normalise_input
 
 
 def list_of_items(items):

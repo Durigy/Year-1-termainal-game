@@ -1,4 +1,5 @@
-from items import *
+from items import tools
+from items import food
 
 road_library = {
     "name": "Herod Close",
@@ -279,7 +280,7 @@ roads = {
 
 rooms = {
     "Laboratory 1": room_lab1,
-    "Carpark": room_carpark,
+    "Car Park": room_carpark,
     "Shop": room_shop,
     "The Plough": room_pub,
     "Alleyway": room_alleyway
