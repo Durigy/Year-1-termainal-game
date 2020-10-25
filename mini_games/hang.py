@@ -54,7 +54,7 @@ def hangman_minigame():
     #     else:
     #         play = False
 
-    words = ["asdfghjkl"]
+    word_list = ["asdfghjkl"]
 
     guesses = 0
     missing_letters = ''
