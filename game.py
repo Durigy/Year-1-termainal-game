@@ -1,11 +1,9 @@
 #!/usr/bin/python3
 
-from main_game import rooms
-from main_game import characters
-from main_game import tools
-from main_game import food
-from main_game import normalise_input
+# import sys
+# sys.path.append("..")
 
+from main_game import rooms, roads, characters, tools, food, normalise_input, current_room, inventory
 
 def list_of_items(items):
     temp = []
@@ -16,6 +14,7 @@ def list_of_items(items):
 
 def print_room_items(room):
     if len(room["items"]) != 0:
+        #rooms[tools[direction]]["name"]
         temp = []
         for i in room["items"]:
             temp.append(i["name"])

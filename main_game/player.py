@@ -1,11 +1,10 @@
-from items import *
-from map import rooms
-from map import roads
+from .items import tools, food
+from .map import rooms, roads
 
-#inventory = [item_id, item_laptop, item_money]
+inventory = tool["id"]
 
 # Start game at the reception
-#current_room = rooms["Reception"]
+current_room = rooms["laboratory 1"]
 
 player_character = {
     "name": "Character1",
@@ -14,6 +13,7 @@ player_character = {
     "Oxygen": "123",
     "Energy": "100",
     "inventory": []
+}
 
 player_character1 = {
     "name": "Character1",
@@ -22,6 +22,7 @@ player_character1 = {
     "Oxygen": "123",
     "Energy": "100",
     "inventory": []
+}
 
 player_character2 = {
     "name": "Character1",
@@ -30,11 +31,10 @@ player_character2 = {
     "Oxygen": "123",
     "Energy": "100",
     "inventory": []
-    
-characters = {
+}
 
+characters = {
     "Character" : player_character,
     "Character1": player_character1,
     "Character2": player_character2
-
 }

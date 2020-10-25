@@ -1,5 +1,4 @@
-from main_game.map import rooms
-from main_game.player import characters
-from main_game.items import tools
-from main_game.items import food
-from main_game.gameparser import normalise_input
+from .map import rooms, roads
+from .player import characters, current_room, inventory
+from .items import tools, food
+from .gameparser import normalise_input

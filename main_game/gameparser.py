@@ -2,7 +2,7 @@ import string
 
 specialised_words = ["go", "take","drop","look","open","close","enter","leave","menu","eat","north","east","south","west","inventory","use"]
 
-def filter_words(words, sprecialised_words):
+def filter_words(words, specialised_words):
     filtered = []
     for word in words:
         if word in specialised_words:
@@ -24,5 +24,5 @@ def remove_punct(text):
 def normalise_input(user_input):
     # Remove punctuation and convert to lower case
     words = remove_punct(user_input).lower()
-    filtered_words = filter_words((words).split(), specialised_words)
+    filtered_words = filter_words(words.split(), specialised_words)
     return filtered_words

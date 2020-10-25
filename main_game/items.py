@@ -8,6 +8,27 @@ item_id = {
 You wonder why they have printed a suicide hotline number on it?..."""
 }
 
+item_syringes_bag = {
+    "id": "syringes bag",
+
+    "name": "syringes bag",
+
+    "description":
+    """You new shiny student ID card. Expires 1 June 2017.
+You wonder why they have printed a suicide hotline number on it?..."""
+}
+
+item_batteries = {
+    "id": "batteries",
+
+    "name": "batteries",
+
+    "description":
+    """You new shiny student ID card. Expires 1 June 2017.
+You wonder why they have printed a suicide hotline number on it?..."""
+}
+
+
 item_laptop = {
     "id": "laptop",
 
@@ -52,12 +73,14 @@ item_handbook = {
 
 tools = {
     "id": item_id,
+    "syringes bag": item_syringes_bag,
+    "batteries": item_batteries,
     "laptop": item_laptop,
     "money": item_money,
     "pen": item_pen,
-    "handbook": item_handbook,
+    "handbook": item_handbook
 }
 
 food = {
-    "biscuits": item_biscuits,
+    "biscuits": item_biscuits
 }
