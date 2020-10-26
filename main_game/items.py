@@ -299,12 +299,12 @@ tools = {
     "batteries": item_batteries,
     "laptop": item_laptop,
     "substance1": item_substance1,
-    "paper passcode": item_paoer_passcode,
+    "paper passcode": item_paper_passcode,
     "cleaning product": item_cleaning_product,
     "axe": item_axe,
     "notebook": item_notebook,
     "beakers": item_beakers,
-    "watch": item_watch
+    "watch": item_watch,
     "substance2": item_substance2,
     "substance3": item_substance3
 }
