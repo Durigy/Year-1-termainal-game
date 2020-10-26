@@ -1,93 +1,319 @@
-item_id = {
-    "id": "id",
+# Tools --------------------------------------------------------
 
-    "name": "id card",
+item_torch = {
+    "id": "torch",
+
+    "name": "Torch",
 
     "description":
-        """You new shiny student ID card. Expires 1 June 2017.
-You wonder why they have printed a suicide hotline number on it?...""",
-    "mass": "25"  # we need to adjust the mass, currently it is either too low or too high.
+    """A battery powered torch that could come
+in handy in dark places. Perhaps it could even
+be used as a weapon? It must have been at one
+point - the end of it is covered in dried
+blood.""",
+
+    "mass" : "25"  # we need to adjust the mass, currently it is either too low or too high.
 }
 
 item_syringes_bag = {
     "id": "syringes bag",
 
-    "name": "syringes bag",
+    "name": "Syringes Bag",
 
     "description":
-        """You new shiny student ID card. Expires 1 June 2017.
-You wonder why they have printed a suicide hotline number on it?...""",
-    "mass": "600"  # we need to adjust the mass, currently it is either too low or too high.
+    """A bag of syringes - clearly not sterilised.
+You wonder if they were used for something other than
+medicinal practices back when things were normal.""",
+
+    "mass" : "40" # we need to adjust the mass, currently it is either too low or too high.
 }
 
 item_batteries = {
     "id": "batteries",
 
-    "name": "batteries",
+    "name": "Batteries",
 
     "description":
-        """You new shiny student ID card. Expires 1 June 2017.
-You wonder why they have printed a suicide hotline number on it?...""",
-    "mass": "250"  # we need to adjust the mass, currently it is either too low or too high.
+    """A pack of batteries that will be suitable
+for a torch. It's amazing they haven't been taken
+already.""",
+
+    "mass" : "130" # we need to adjust the mass, currently it is either too low or too high.
 }
+
 
 item_laptop = {
     "id": "laptop",
 
-    "name": "laptop",
+    "name": "Laptop",
 
     "description":
-        "It has seen better days. At least it has a WiFi card!",
-    "mass": "2500"  # we need to adjust the mass, currently it is either too low or too high.
+    """This old thing used to be pioneering
+technology, once upon a time. Maybe when the world
+returns to normal, there will be such thing as
+'new' technology again.""",
+
+    "mass" : "2500" # we need to adjust the mass, currently it is either too low or too high.
 }
 
-item_money = {
-    "id": "money",
+item_substance1 = {
+    "id": "substance1",
 
-    "name": "money",
+    "name": "Chemical Substance 1",
 
     "description":
-        "This wad of cash is barely enough to pay your tuition fees.",
-    "mass": "9000"  # we need to adjust the mass, currently it is either too low or too high.
+    """This checical substance is something familiar to
+Dr. Gavigan, but is rather elusive to you. One fact
+remains; it's vital for the vaccine.""",
+
+    "mass" : "120" # we need to adjust the mass, currently it is either too low or too high.
 }
 
-item_biscuits = {
-    "id": "biscuits",
+item_paper_passcode = {
+    "id": "paper passcode",
 
-    "name": "a pack of biscuits",
+    "name": "Passcode",
 
-    "description": "A pack of biscuits.",
-    "mass": "30"  # we need to adjust the mass, currently it is either too low or too high.
+    "description":
+    """A piece of old, yellow paper with a passcode
+messily strewn on it. Whoever wrote this certainly
+has horrible handwriting.""",
+
+    "mass" : "20" # we need to adjust the mass, currently it is either too low or too high.
 }
 
-item_pen = {
+item_hammer = {
+    "id": "hammer",
+    
+    "name": "Hammer",
+
+    "description":
+    """The hammer has clearly been used in self
+defence, but has remained in good shape. It'll do
+the trick of it's original purpose.""",
+
+    "mass" : "500" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_cleaning_product = {
+    "id": "cleaning product",
+    
+    "name": "Disinfectant Spray",
+
+    "description":
+    """The disinfectant spray is definitely a go-to
+for making disinfecting items easy. That is what it
+does, after all.""",
+
+    "mass" : "350" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_axe = {
+    "id": "axe",
+
+    "name": "Axe",
+
+    "description":
+    """This axe would've been a very handy weapon for
+someone outside of the gates. Unfortunately for them,
+it's here.""",
+
+    "mass" : "2300" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_notebook = {
+    "id": "notebook",
+
+    "name": "Dr. Gavigan's Notebook",
+
+    "description":
+    """A notebook by Dr. Gavigan, containing important
+notes for the vaccine! Despite, he's informed you not to
+read it yourself.""",
+
+    "mass" : "400" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_beakers = { # there should be 3-5 of these around the map
+    "id": "beakers",
+
+    "name": "Beakers",
+
+    "description":
+    """Beakers that can be used in the making of
+chemicals and scientific experiments.""",
+
+    "mass" : "100" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_watch = {
+    "id": "watch",
+
+    "name": "Dr. Gavigan's Pocketwatch",
+
+    "description":
+    """Dr. Gavigan's pocket watch, that must have fallen
+out of his pocket. Inside is, of course, a watch - it
+stands still. Next to it, a picture of him and his wife.
+She's rather beautiful, but you've never seen anything of
+her.""",
+
+    "mass" : "200" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_substance2 = {
+    "id": "substance2",
+    
+    "name": "Chemical Substance 2",
+
+    "description":
+    """This checical substance is something familiar to
+Dr. Gavigan, but is rather elusive to you. One fact
+remains; it's vital for the vaccine.""",
+
+    "mass" : "50" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_substance3 = {
+    "id": "substance3",
+
+    "name": "Chemical Substance 3",
+
+    "description":
+    """This checical substance is something familiar to
+Dr. Gavigan, but is rather elusive to you. One fact
+remains; it's vital for the vaccine.""",
+
+    "mass" : "60" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_pen = { # this is new added and needs to be sorted
     "id": "pen",
 
     "name": "a pen",
 
-    "description": "A basic ballpoint pen.",
-    "mass": "125"  # we need to adjust the mass, currently it is either too low or too high.
+    "description":
+        """A basic ballpoint pen.""",
+
+    "mass": "125" # we need to adjust the mass, currently it is either too low or too high.
 }
 
-item_handbook = {
-    "id": "handbook",
 
-    "name": "a student handbook",
+# Food --------------------------------------------------------
 
-    "description": "This student handbook explains everything. Seriously.",
-    "mass": "1000"  # we need to adjust the mass, currently it is either too low or too high.
+item_salted_crisps = {
+    "id": "salted crips",
+
+    "name": "Bag of Salted Crisps",
+
+    "description":
+    """A pack of Kettle Salted Crisps. You wonder if
+crisps go out of date.""",
+
+    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+
+    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
 }
+
+item_mars_bar = {
+    "id": "mars bar",
+
+    "name": "Mars Bar",
+
+    "description":
+    """A mars bar - which looks very tempting right
+about now. Will it taste just like it used to?""",
+
+    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+
+    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_canned_beans = {
+    "id": "canned beans",
+
+    "name": "Canned Beans",
+
+    "description":
+    """Am own-brand can of baked beans. They will be
+edible cold, just not as nice. It takes you back to
+beans on toast as your go-to meal when you were a
+university student.""",
+
+    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+
+    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_canned_potatoes = {
+    "id": "canned potatoes",
+
+    "name": "Canned Potatoes",
+    
+    "description":
+    """An own-band can of potatoes. You're surprised
+to find out they're well within their expiry date. A
+filling so-called meal, nowadays.""",
+
+    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+
+    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_pickles = {
+    "id": "pickles",
+
+    "name": "Jar of Pickles",
+
+    "description":
+    """A jar of pickles, Dr. Gavigan's favourite
+snack. He seems to have an endless amount of them -
+probably won't notice if one jar disappears. Afterall,
+how else did it get here?""",
+
+    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+
+    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+item_vodka = {
+    "id": "vodka",
+
+    "name": "Vodka",
+
+    "description":
+    """A bottle of vodka that seems a bit dusty on
+the outside, but unopened - which will be useful as
+a make-shift disinfectant.""",
+
+    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+
+    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
+}
+
+# --------------------------------------------------------
 
 tools = {
-    "id": item_id,
+    "torch": item_torch,
     "syringes bag": item_syringes_bag,
     "batteries": item_batteries,
     "laptop": item_laptop,
-    "money": item_money,
-    "pen": item_pen,
-    "handbook": item_handbook
+    "substance1": item_substance1,
+    "paper passcode": item_paoer_passcode,
+    "cleaning product": item_cleaning_product,
+    "axe": item_axe,
+    "notebook": item_notebook,
+    "beakers": item_beakers,
+    "watch": item_watch
+    "substance2": item_substance2,
+    "substance3": item_substance3
 }
 
 food = {
-    "biscuits": item_biscuits
+    "salted crisps": item_salted_crisps,
+    "mars bar": item_mars_bar,
+    "canned beans": item_canned_beans,
+    "canned potatoes": item_canned_potatoes,
+    "pickles": item_pickles,
+    "vodka": item_vodka
 }
