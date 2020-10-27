@@ -128,9 +128,9 @@ def morse_code_minigame():
                         "labratory 1",".-.. .- -... --- .-. .- - --- .-. -.-- / .----","main street","-- .- .. -. / ... - .-. . . -","shop","... .... --- .--.",
                         "the plough","- .... . / .--. .-.. --- ..- --. ....",	"alleyway",".- .-.. .-.. . -.-- .-- .- -.--","isiah road",".. ... .. .- .... / .-. --- .- -..",
                         "laboratory 2",".-.. .- -.	.. --- .-. .- - --- .-. -.-- / ..---","willow park",".-- .. .-.. .-.. --- .-- / .--. .- .-. -.-",
-                        "windy path",".-- .. -. 	-.. -.-- / .--. .- - ....","library",".-.. .. -... .-. .- .-. -.--"]
+                        "windy path",".-- .. -. -.. -.-- / .--. .- - ....","library",".-.. .. -... .-. .- .-. -.--"]
 	
-	print("A	.-		B	-...\nC	-.-.		D	-..\nE	.		F	..-.\nG	--.		H	....\nI	..		J	.---\nK	-.-		L	.-..\nM	--		N	-.\nO	---		P	.--.\nQ	--.-		R	.-.\nS	...		T	-\nU	..-		V	...-\nW	.--		X	-..-\nY	-.--		Z	--..\n1.----	2	..---\nSPACE")
+	print("A	.-		B	-...\nC	-.-.		D	-..\nE	.		F	..-.\nG	--.		H	....\nI	..		J	.---\nK	-.-		L	.-..\nM	--		N	-.\nO	---		P	.--.\nQ	--.-		R	.-.\nS	...		T	-\nU	..-		V	...-\nW	.--		X	-..-\nY	-.--		Z	--..\n1	.----		2	..---\n")
 	
 	#searches for the next room in the list above and sets a variable to the element's position in the list
 	where=morse_roomlist.index(next_room.lower())
@@ -149,6 +149,8 @@ def morse_code_minigame():
 		if morse_attempt.lower()==morse_roomlist[where]:
 			morse_complete=True
 		else:
-			print("That doesn't seem to be right. \n")
+			print("Hmmm, that doesn't seem right. \n")
 
 #morse_code_minigame()
+
+
