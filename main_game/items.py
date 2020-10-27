@@ -304,7 +304,7 @@ tools = {
     "axe": item_axe,
     "notebook": item_notebook,
     "beakers": item_beakers,
-    "watch": item_watch
+    "watch": item_watch,
     "substance2": item_substance2,
     "substance3": item_substance3
 }
