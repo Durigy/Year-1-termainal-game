@@ -5,44 +5,6 @@ from .items import tools, food
 specialised_words = ["go", "take","drop","look","open","close","eat","use"]
 direction = ["north","east","south","west"]
 
-# List of "unimportant" words (feel free to add more)
-# skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
-#               'bad', 'beautiful', 'been', 'better', 'big', 'can', 'every', 'for',
-#               'from', 'good', 'have', 'her', 'here', 'hers', 'his', 'how',
-#               'i', 'if', 'in', 'into', 'is', 'it', 'its', 'large', 'later',
-#               'like', 'little', 'main', 'me', 'mine', 'more', 'my', 'now',
-#               'of', 'off', 'oh', 'on', 'please', 'small', 'some', 'soon',
-#               'that', 'the', 'then', 'this', 'those', 'through', 'till', 'to',
-#               'towards', 'until', 'us', 'want', 'we', 'what', 'when', 'why',
-#               'wish', 'with', 'would']
-
-
-# def filter_words(words):
-#     com = ""
-#     item = ""
-#
-#     if len(words) != 0:
-#         for word in words[:]:
-#             for sWord in specialised_words:
-#                 if word == sWord:
-#                     com = word
-#
-#
-#             for sWord in skip_words:
-#                 if word == sWord:
-#                     if com != "no":
-#                         words.remove(word)
-#     else:
-#         com = "no"
-#
-#     if com != "no":
-#         if len(com) != 0:
-#             words.remove(com)
-#
-#     new_word = [com, words]
-#
-#     return new_word
-
 def filter_words(words):
     com = ""
     n = ""
@@ -83,10 +45,10 @@ def remove_punct(text):
 def normalise_input(user_input, filtered = True):
     # Remove punctuation and convert to lower case
     words = remove_punct(user_input).lower()
-    # if filtered:
-    #     filtered_words = filter_words(words.split(), specialised_words)
-    # else:
-    #     filtered_words = words
+    if filtered:
+        filtered_words = filter_words(words)
+    else:
+        filtered_words = words
 
-    filtered_words = filter_words(words) #filter_words(words.split())
+    #filtered_words = filter_words(words) #filter_words(words.split())
     return filtered_words
