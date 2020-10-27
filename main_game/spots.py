@@ -103,7 +103,7 @@ front_shop = {
     """Standing in front of the shop,
 you see a binbag in front of one of the
 houses - to your north. You can see
-a wooden handle protuding from it.
+a wooden handle protruding from it.
 If you go south, you'll enter the shop,
 and east will take you back to the centre
 of the street.""",
@@ -319,7 +319,7 @@ garden_fence = {
 
     "description":
         """You're now standing at the garden
-    fance, by the half-opened box. It seems
+    fence, by the half-opened box. It seems
     quiet, so you're certain there's no rats
     in there. You can't be bothered to catch
     a disease, quite honestly.
@@ -339,7 +339,7 @@ garden_fence = {
 
 # Rooms --------------------------------------------------------------------
 
-# Carpark
+# Car park
 car_lab1_side_entrance = {
     "name": rooms["car park"]["name"],
 
@@ -446,7 +446,7 @@ carpark_centre = {
 
     "description":
         """You are now in the centre of the
-    carpark. You can go east onto Herod Street,
+    car park. You can go east onto Herod Street,
     or west to the blue car.""",
 
     "exits": {"west": "blue car", "east": "hs centre"},
@@ -542,7 +542,7 @@ lab1_side_entrance = {
 
     "description":
         """You are standing in front of the
-    door that leads to the carpark.
+    door that leads to the car park.
     You can go south to enter it, or east to check
     out the bookshelf""",
 
@@ -755,7 +755,7 @@ industrial_bin = {
     
     "description":
     """The industrial bin still makes an
-unsetlling noise as you edge closer to it.
+unsettling noise as you edge closer to it.
 It remains closed, but there's a scratching
 noise from the inside. The top remains
 closed.
@@ -804,7 +804,7 @@ entrance_street = {
 
     "description":
     """You are now standing just by the
-enterance of Main Street - the light
+entrance of Main Street - the light
 warms you from the dark of the alley.
 To enter Main Street, go north. Going west
 will take you to the centre of the alley.""",
@@ -851,7 +851,7 @@ top_cupboard = {
     """You're now in front of the
 opened cupboard - it's full of jars of
 pickles. Where on earth did Dr. Gavigan
-get them from? It rather unsetlled you.
+get them from? It rather unsettled you.
 From here, you can go east to check out
 the beaker tray - or south to the centre
 of the lab, where Dr. Gavigan is.""",
@@ -990,7 +990,7 @@ west will take you to the bench.""",
 
     "exits": {"north": "lab 2 side entrance", "west": "bench"},
     # Pickles will be under the willow tree or in the box (windy path - garden fence)
-    # NOTE: Pickles in "cupboard" are not takeable.
+    # NOTE: Pickles in "cupboard" are not take-able.
     "tools": [],
 
     "food": [],
@@ -1055,7 +1055,7 @@ spot_bush = {
     "description":
     """You go over to the bush to play
 with the kitten, but it simply hisses
-at you - it's ferile. In fact, you even
+at you - it's feral. In fact, you even
 get scratched with tiny, sharp claws.
 Perhaps it's time to just turn back,
 south to the centre. """,
@@ -1155,7 +1155,7 @@ mystery_aisle = {
     """The mystery aisle is filled with
 murder mystery books, set in a modern
 world or one from decades ago - it felt
-like there was no inbetween. Death was a
+like there was no in between. Death was a
 familiar concept, nowadays. Everyone you
 know, will, or have known has lost someone.
 You hope that Dr. Gavigan's vaccine will
@@ -1185,7 +1185,7 @@ nonfic_aisle = {
     
     "description":
     """The non-fiction aisle is in a dark corner,
-the window boardered up - which would usually
+the window boarded up - which would usually
 look out onto Herod Close. It'd be impossible
 to search here without some kind of light source.
 You can only return east, to the centre, where
