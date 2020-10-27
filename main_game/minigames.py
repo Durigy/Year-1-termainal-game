@@ -125,12 +125,13 @@ def morse_code_minigame():
 	next_room="Windy Path"
 	#list of the rooms and corresponding morse codes for the rooms
 	morse_roomlist=["Windy Path",".... . .-. --- -.. / -.-. .-.. --- ... .","herod street",".... . .-. --- -.. / ... - .-. 	. . -","carpark","-.-. .- .-. .--. .- .-. -.-",
-                        "labratory 1",".-.. .- -... --- .-. .- - --- .-. -.-- / .----","main 		street","-- .- .. -. / ... - .-. . . -","shop","... .... --- .--.",
+                        "labratory 1",".-.. .- -... --- .-. .- - --- .-. -.-- / .----","main street","-- .- .. -. / ... - .-. . . -","shop","... .... --- .--.",
                         "the plough","- .... . / .--. .-.. --- ..- --. ....",	"alleyway",".- .-.. .-.. . -.-- .-- .- -.--","isiah road",".. ... .. .- .... / .-. --- .- -..",
                         "laboratory 2",".-.. .- -.	.. --- .-. .- - --- .-. -.-- / ..---","willow park",".-- .. .-.. .-.. --- .-- / .--. .- .-. -.-",
                         "windy path",".-- .. -. 	-.. -.-- / .--. .- - ....","library",".-.. .. -... .-. .- .-. -.--"]
 	
-	print("A	.-		B	-...\nC	-.-.		D	-..\nE	.		F	..-.\nG	--.		H	....\nI	..		J	.---\nK	-.-		L	.-..\nM	--		N	-.\nO	---		P	.--.\nQ	--.-		R	.-.\nS	...		T	-\nU	..-		V	...-\nW	.--		X	-..-\nY	-.--		Z	--..\n1.----	2	..---\nSPACE	/\n\n\nIf you answer incorrectly, you will be prompted to 		answer again.\nUse the above table to translate the following:")
+	print("A	.-		B	-...\nC	-.-.		D	-..\nE	.		F	..-.\nG	--.		H	....\nI	..		J	.---\nK	-.-		L	.-..\nM	--		N	-.\nO	---		P	.--.\nQ	--.-		R	.-.\nS	...		T	-\nU	..-		V	...-\nW	.--		X	-..-\nY	-.--		Z	--..\n1.----	2	..---\nSPACE")
+	
 	#searches for the next room in the list above and sets a variable to the element's position in the list
 	where=morse_roomlist.index(next_room.lower())
 
@@ -140,13 +141,14 @@ def morse_code_minigame():
 		#assigns a variable to the morse-translated version of the next room
 		morse_room=morse_roomlist[where+1]
 		#prints the morse version of the next room
-		print(morse_room)
+		print("\n", morse_room, "\n")
+		print("Appears to be some kind of code???")
 		#calls for user's answer
-		morse_attempt=input()
+		morse_attempt=input("Morse Code to be exact, Shoudln't be too difficult to work out:")
 		#checks the user's answer against the element in the correct position in the roomlist
 		if morse_attempt.lower()==morse_roomlist[where]:
 			morse_complete=True
 		else:
-			print("Incorrect\n")
+			print("That doesn't seem to be right. \n")
 
-morse_code_minigame()
+#morse_code_minigame()
