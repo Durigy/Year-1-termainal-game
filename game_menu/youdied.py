@@ -11,14 +11,12 @@ def demo(screen):
             FigletText("You Died !", font='big'),
             int(screen.height / 2 - 8)),
         Cycle(screen,
-              FigletText("Press 'q' to restart game, else ctrl + c to leave", font='small'),
+              FigletText("Press 'q' to quit.", font='small'),
               int(screen.height / 1 - 8)
               ),
         Stars(screen, 300)
     ]
-    screen.play([Scene(effects, 5)])
+    screen.play([Scene(effects, 5000)])
 
 
 Screen.wrapper(demo)
-import map
-map

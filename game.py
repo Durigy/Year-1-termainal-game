@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from time import time
 from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time
+from game_menu import Intro
 
 def print_room_items(tools, food):
     temp = []  # room tools
@@ -306,12 +307,13 @@ def move(exits, direction):
     return spots[exits[direction]]
 
 def death_screen():
-    print("\n" + "-"*90 + "\n\nYou died, tray again later.\n\n" + "-"*90 + "\n")
+    from game_menu import youdied
 
 
 # This is the entry point of our program
 def main():
     # Main game loop
+    Intro
     while inventory["health"] > 0:
         # Display game status (room description, inventory etc.)
         print_room(current_room, current_room["tools"], current_room["food"])

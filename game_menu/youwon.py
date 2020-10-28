@@ -2,6 +2,8 @@ from asciimatics.effects import Cycle
 from asciimatics.renderers import FigletText
 from asciimatics.scene import Scene
 from asciimatics.screen import Screen
+
+
 def demo(screen):
     effects = [
         Cycle(
@@ -13,8 +15,7 @@ def demo(screen):
               int(screen.height / 1 - 8)
               ),
     ]
-    screen.play([Scene(effects, 500)])
-Screen.wrapper(demo)
+    screen.play([Scene(effects, 5000)])
 
-#import replaceme replace, replaceme with the .py file.
-#replaceme
+
+Screen.wrapper(demo)
