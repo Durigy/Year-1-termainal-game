@@ -9,11 +9,11 @@ def user_interface(text):
 
 #Room
 text="ROOM:________"
-print (bordered(text))
+print (user_interface(text))
 #Description
 text="DESCRIPTION:\nYou are standing in Main Street - which used to be full of life.\nTo your left, a row of houses - now occupied by refugees that pray\nfora vaccine. There is a bin-bag with a peculiar wooden handle \nsticking out. You can go into the shop, the pub next to it or the\nalleyway. You can go west onto Herod Streator north onto Isiah Road."
 
-print(bordered(text))
+print(user_interface(text))
 
 text="""
 ***********************************************************************************************************************************
@@ -53,7 +53,7 @@ text="""
 *                                                                                                                                 *
 ***********************************************************************************************************************************"""
 
-print (bordered(text))
+print (user_interface(text))
 print (text)
 
 
