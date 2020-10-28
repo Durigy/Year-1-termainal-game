@@ -10,7 +10,7 @@ inventory = { # temporary testing inventory
 }
 
 # Start game at the lab 1 spot 1
-current_room = spots["lab2 centre"]
+current_room = spots["lab2 main entrance"]
 
 player_addplayername0 = {
     "name": "Character1",

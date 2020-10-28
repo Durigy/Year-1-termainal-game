@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from time import time
-from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time#, user_interface
+from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time, header, footer #, user_interface
 
 def print_room_items(tools, food):
     temp = []  # room tools
@@ -52,6 +52,13 @@ def print_room(room, tools, food):
 
     print_room_items(tools, food)
 
+def new_print_room(room, tools, food):
+    name = room["name"].upper(), "-", room["spot name"].upper()
+    print("\n" * 10)
+    header(room["name"].upper(), room["spot name"].upper(), str(inventory["health"]), str(inventory["energy"]))
+    print(room["map"])
+    footer(inventory["tools"] + inventory["food"], room["tools"] + room["food"], room["description"])
+
 
 def print_player_info():
     print_inventory_items(inventory)
@@ -101,19 +108,19 @@ def energy_level():
         old_time = time()
 
 
-    if inventory["energy"] > 5:
-        print("Your energy level is:", inventory["energy"], "\n")
-    elif inventory["energy"] > 3:
-        print("Your energy level is:", inventory["energy"], " - you need to eat before you die\n")
-    elif inventory["energy"] > 0:
-        print("Your energy level is:", inventory["energy"], " - you are about to die\n")
-    elif inventory["energy"] <= 0:
-        inventory["health"] -= 1
-        inventory["energy"] = 10
-    if inventory["health"] > 1:
-        print("You have", inventory["health"], "lives left\n")
-    else:
-        print("You have", inventory["health"], "life left\n")
+    # if inventory["energy"] > 5:
+    #     print("Your energy level is:", inventory["energy"], "\n")
+    # elif inventory["energy"] > 3:
+    #     print("Your energy level is:", inventory["energy"], " - you need to eat before you die\n")
+    # elif inventory["energy"] > 0:
+    #     print("Your energy level is:", inventory["energy"], " - you are about to die\n")
+    # elif inventory["energy"] <= 0:
+    #     inventory["health"] -= 1
+    #     inventory["energy"] = 10
+    # if inventory["health"] > 1:
+    #     print("You have", inventory["health"], "lives left\n")
+    # else:
+    #     print("You have", inventory["health"], "life left\n")
 
     if inventory["health"] <= 0:
         death_screen()
@@ -288,7 +295,7 @@ def execute_command(command):
         print_help()
 
     elif command[0] == "exit":
-        check = normalise_input(input("Are you sure you want to exit the game. You will loose everything. (YES/NO): "), False)
+        check = normalise_input(input("Are you sure you want to exit the game. You will lose everything. (YES/NO): "), False)
         if check == "yes":
             exit()
         elif len(check) >= 0:
@@ -306,7 +313,7 @@ def execute_command(command):
 
 def menu(exits, tools, food, inv):
     # Display menu
-    print_menu(exits, tools, food, inv)
+    #print_menu(exits, tools, food, inv)
 
     # Read player's input
     user_input = input("> ")
@@ -335,11 +342,11 @@ def difficulty(level):
         return True
     elif level == "medium" or level == "m":
         inventory["health"] = 3
-        print("\n" + "-"*90 + "\n\nyou chose easy, you have, 3 lives.")
+        print("\n" + "-"*90 + "\n\nyou chose medium, you have, 3 lives.")
         return True
     elif level == "hard" or level == "h":
         inventory["health"] = 1
-        print("\n" + "-"*90 + "\n\nyou chose easy, you have, 1 live, don't waste it.")
+        print("\n" + "-"*90 + "\n\nyou chose hard, you have, 1 live, don't waste it.")
         return True
     elif len(level) >= 0:
         print("\n" + "-"*90 + "\n\nType a difficulty: easy, medium or hard.")
@@ -359,8 +366,9 @@ def main():
     # Main game loop
     while int(inventory["health"]) > 0:
         # Display game status (room description, inventory etc.)
-        print_room(current_room, current_room["tools"], current_room["food"])
-        print_player_info()
+        #print_room(current_room, current_room["tools"], current_room["food"])
+        new_print_room(current_room, current_room["tools"], current_room["food"])
+        #print_player_info()
 
         # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["tools"], current_room["food"], inventory)

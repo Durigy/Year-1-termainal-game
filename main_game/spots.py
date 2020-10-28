@@ -5,8 +5,10 @@ from .map import rooms, roads
 # Roads --------------------------------------------------------------------
 
 # Herod Close
-l_entrace_hc = {
+l_entrance_hc = {
     "name": roads["herod close"]["name"],
+
+    "main description": "",
     
     "spot name": "Library Entrance",
 
@@ -21,7 +23,7 @@ to attempt access to the Library.""",
 
     "exits": {"east": "hc entrance", "north": "mystery aisle"},
 
-    "tools": [item_id_card],
+    "tools": ["id card"],
 
     "food": [],
 
@@ -289,7 +291,7 @@ west to enter Herod Street.""",
 
     "food": [],
 
-    "passcode": []
+    "passcode": [],
 
     "map": """
 _____________________________________________________________________________________________________________________________________
@@ -336,6 +338,8 @@ ________________________________________________________________________________
 front_pub = {
     "name": roads["main street"]["name"],
 
+    "main description": "",
+    
     "spot name": "Pub Front",
     
     "description":
@@ -665,6 +669,8 @@ ________________________________________________________________________________
 birds_nest = {
     "name": roads["windy path"]["name"],
 
+    "main description": "",
+    
     "spot name": "Birds Nest",
 
     "description":
@@ -678,7 +684,7 @@ path.""",
 
     "exits": {"west": "library side entrance", "east": "ir north centre", "south": "w centre"},
 
-    "tools": [item_substance2],
+    "tools": ["substance2"],
 
     "food": [],
 
@@ -729,6 +735,8 @@ ________________________________________________________________________________
 spot_box = {
     "name": roads["windy path"]["name"],
 
+    "main description": "",
+    
     "spot name": "Box",
 
     "description":
@@ -741,7 +749,7 @@ take you back onto Isiah Road.""",
 
     "exits": {"north": "w centre", "east": "ir north centre", "west": "library side entrance"},
 
-    "tools": [item_beakers],
+    "tools": ["beakers"],
 
     "food": [],
 
@@ -796,6 +804,8 @@ ________________________________________________________________________________
 cp_lab1_side_entrance = {
     "name": rooms["car park"]["name"],
 
+    "main description": "",
+    
     "spot name": "CP Lab 1 Side Entrance",
 
     "description":
@@ -812,7 +822,7 @@ lead you to the car.""",
 
     "food": [],
 
-    "passcode": ["answer"]
+    "passcode": ["answer"],
 
     "map": """
 _____________________________________________________________________________________________________________________________________
@@ -861,6 +871,8 @@ ________________________________________________________________________________
 carpark_entrance = {
     "name": rooms["car park"]["name"],
 
+    "main description": "",
+    
     "spot name": "Carpark Entrance",
 
     "description":
@@ -875,7 +887,7 @@ you to the side entrance of Laboratory 1.""",
 
     "food": [],
 
-    "passcode": []
+    "passcode": [],
 
     "map": """
 _____________________________________________________________________________________________________________________________________
@@ -922,6 +934,8 @@ ________________________________________________________________________________
 spot_car = {
     "name": rooms["car park"]["name"],
 
+    "main description": "",
+    
     "spot name": "Car",
 
     "description":
@@ -935,11 +949,11 @@ carpark.""",
 
     "exits": {"north": "cp lab 1 side entrance", "east": "carpark entrance"},
     
-    "tools": [item_torch],
+    "tools": ["torch"],
 
     "food": [],
 
-    "passcode": []
+    "passcode": [],
 
     "map": """
 _____________________________________________________________________________________________________________________________________
@@ -988,6 +1002,8 @@ ________________________________________________________________________________
 lab1_main_entrance = {
     "name": rooms["laboratory 1"]["name"],
 
+    "main description": "",
+    
     "spot name": "Lab 1 Main Entrance",
 
     "description":
@@ -1049,6 +1065,8 @@ ________________________________________________________________________________
 lab1_side_entrance = {
     "name": rooms["laboratory 1"]["name"],
 
+    "main description": "",
+    
     "spot name": "Lab 1 Side Entrance",
 
     "description":
@@ -1111,6 +1129,8 @@ ________________________________________________________________________________
 spot_desk = {
     "name": rooms["laboratory 1"]["name"],
 
+    "main description": "",
+    
     "spot name": "Desk",
 
     "description":
@@ -1125,7 +1145,7 @@ entrance.""",
 
     "exits": {"west": "syringe cupboard", "south": "lab1 main entrance"},
 
-    "tools": [item_laptop, item_notebook],
+    "tools": ["laptop", "notebook"],
 
     "food": [],
 
@@ -1176,6 +1196,8 @@ ________________________________________________________________________________
 syringe_cupboard = {
     "name": rooms["laboratory 1"]["name"],
 
+    "main description": "",
+    
     "spot name": "Syringe Cupboard",
 
     "description":
@@ -1191,11 +1213,11 @@ south will take you to the side entrance.""",
 
     "exits": {"east": "desk", "south": "lab 1 side entrance"},
         
-    "tools": [item_syringes_bag, item_substance1],
+    "tools": ["syringes bag", "substance1"],
 
     "food": [],
 
-    "passcode": []
+    "passcode": [],
 
     "map": """
 _____________________________________________________________________________________________________________________________________
@@ -1244,6 +1266,8 @@ ________________________________________________________________________________
 shop_entrance = {
     "name": rooms["shop"]["name"],
 
+    "main description": "",
+    
     "spot name": "Shop Entrance",
     
     "description":
@@ -1262,7 +1286,7 @@ Street.""",
 
     "food": [],
 
-    "passcode": []
+    "passcode": [],
 
     "map": """
 _____________________________________________________________________________________________________________________________________
@@ -1309,6 +1333,8 @@ ________________________________________________________________________________
 cleaning_aisle = {
     "name": rooms["shop"]["name"],
     
+    "main description": "",
+    
     "spot name": "Cleaning Aisle",
 
     "description":
@@ -1323,11 +1349,11 @@ the shop entrance.""",
 
     "exits": {"north": "shop entrance"},
 
-    "tools": [item_cleaning_product, item_pen],
+    "tools": ["cleaning product", "pen"],
 
     "food": [],
 
-    "passcode": []
+    "passcode": [],
 
     "map": """
 _____________________________________________________________________________________________________________________________________
@@ -1377,6 +1403,8 @@ ________________________________________________________________________________
 pub_centre = {
     "name": rooms["the plough"]["name"],
 
+    "main description": "",
+    
     "spot name": "Pub Centre",
     
     "description":
@@ -1437,6 +1465,8 @@ ________________________________________________________________________________
 behind_bar = {
     "name": rooms["the plough"]["name"],
 
+    "main description": "",
+    
     "spot name": "Behind Bar",
     
     "description":
@@ -1451,9 +1481,9 @@ for the laptop.""",
 
     "exits": {"west": "pub centre"},
 
-    "tools": [item_paper_passcode],
+    "tools": ["paper passcode"],
 
-    "food": [item_vodka],
+    "food": ["vodka"],
 
     "passcode": [],
 
@@ -1503,6 +1533,8 @@ ________________________________________________________________________________
 alley_entrance = {
     "name": rooms["alleyway"]["name"],
 
+    "main description": "",
+    
     "spot name": "Alleyway Entrance",
 
     "description":
@@ -1565,6 +1597,8 @@ ________________________________________________________________________________
 pub_back_entrance = {
     "name": rooms["alleyway"]["name"],
 
+    "main description": "",
+    
     "spot name": "Pub Back Entrance",
 
     "description":
@@ -1578,11 +1612,11 @@ entrance of the alley, go east.""",
 
     "exits": {"north": "pub centre", "east": "alley entrance"},
 
-    "tools": [item_axe],
+    "tools": ["axe"],
 
     "food": [],
 
-    "passcode": []
+    "passcode": [],
 
     "map": """
 _____________________________________________________________________________________________________________________________________
@@ -1631,6 +1665,8 @@ ________________________________________________________________________________
 lab2_main_entrance = {
     "name": rooms["laboratory 2"]["name"],
 
+    "main description": "",
+    
     "spot name": "Lab 2 Main Entrance",
     
     "description":
@@ -1647,7 +1683,7 @@ onto Isiah Road, go west.""",
 
     "food": [],
 
-    "passcode": []
+    "passcode": [],
 
     "map": """
 _____________________________________________________________________________________________________________________________________
@@ -1694,6 +1730,8 @@ ________________________________________________________________________________
 spot_tabletop = {
     "name": rooms["laboratory 2"]["name"],
 
+    "main description": "",
+    
     "spot name": "Tabletop",
 
     "description":
@@ -1708,6 +1746,10 @@ go west.""",
     "tools": [],
 
     "food": [],
+
+    "items needed": [],
+
+    "comment": [],
 
     "passcode": [],
 
@@ -1756,7 +1798,7 @@ ________________________________________________________________________________
 # Contaminated Area
 contam_area = {
     "name": rooms["contaminated area"]["name"],
-
+    
     "main description": rooms["contaminated area"]["description"],
 
     "description":
@@ -1816,6 +1858,8 @@ ________________________________________________________________________________
 park_entrance = {
     "name": rooms["willow park"]["name"],
 
+    "main description": "",
+    
     "spot name": "Park Entrance",
     
     "description":
@@ -1828,7 +1872,7 @@ onto Isiah Road.""",
     
     "exits": {"east": "willow tree", "west": "ir centre"},
 
-    "tools": [item_batteries],
+    "tools": ["batteries"],
 
     "food": [],
 
@@ -1879,6 +1923,8 @@ ________________________________________________________________________________
 willow_tree = {
     "name": rooms["willow park"]["name"],
 
+    "main description": "",
+    
     "spot name": "Willow Tree",
     
     "description":
@@ -1952,8 +1998,8 @@ ________________________________________________________________________________
 p_lab2_side_entrance = {
     "name": rooms["willow park"]["name"],
 
-    "main description": rooms["willow park"]["description"],
-
+    "main description": "",
+    
     "spot name": "P Lab 2 Side Entrance",
     
     "description":
@@ -2016,7 +2062,9 @@ ________________________________________________________________________________
 l_side_entrance = {
     "name": rooms["library"]["name"],
 
-    "main description": rooms["library"]["description"],
+    
+    "main description": "",
+    
 
     "spot name": "Library Side Entrance",
 
@@ -2078,10 +2126,12 @@ ________________________________________________________________________________
 }
 
 
-
+# You need a torch (and batteries) in your inventory to light up this.
 mystery_aisle = {
     "name": rooms["library"]["name"],
 
+    "main description": "",
+    
     "spot name": "Mystery Aisle",
 
     "description":
@@ -2150,8 +2200,8 @@ ________________________________________________________________________________
 
 spots = {
     # Herod Close
-    "library entrance": l_entrace_hc,
-    "hc entrance": entrace_hc,
+    "library entrance": l_entrance_hc,
+    "hc entrance": entrance_hc,
     # herod Street
     "lab 1 entrance": lab1_entrance_hs,
     "carpark main str entrance": ms_cp_entrance_hs,
@@ -2170,7 +2220,7 @@ spots = {
     # Car park
     "cp lab 1 side entrance": cp_lab1_side_entrance,
     "carpark entrance": carpark_entrance,
-    "car": spot_car
+    "car": spot_car,
     # Lab 1
     "lab1 main entrance": lab1_main_entrance,
     "desk": spot_desk,
@@ -2187,7 +2237,7 @@ spots = {
     "pub back entrance": pub_back_entrance,
     # Lab 2
     "lab2 main entrance": lab2_main_entrance,
-    "tabletop": spot_tabletop
+    "tabletop": spot_tabletop,
     # Contaminated Area
     "contaminated area centre": contam_area,
     # Park

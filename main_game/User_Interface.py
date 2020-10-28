@@ -8,12 +8,12 @@ def user_interface(text):
     return '\n'.join(res)
 
 
-def header(room, lives, energy):
+def header(room, spot, lives, energy):
 
-    length_remaining = 41 - len(room)
-    left_remaining = 35 - len(energy)
-    remaining = 34 - len(lives)
-    text= "ROOM: " + room + " " * length_remaining + "ENERGY: " + energy + " " * left_remaining + "LIVES: " + lives + " " * remaining
+    length_remaining = 58 - len(room+spot)
+    left_remaining = 25 - len(energy)
+    remaining = 24 - len(lives)
+    text= "ROOM: " + room + " - " + spot + " " * length_remaining + "ENERGY: " + energy + " " * left_remaining + "LIVES: " + lives + " " * remaining
 
     print (user_interface(text))
 
