@@ -1,4 +1,27 @@
 # Tools --------------------------------------------------------
+item_mask = {
+    "id": "mask",
+
+    "name": "Mask",
+
+    "description":
+    """A mask, used in a pandemic a long time
+ago.""",
+
+    "mass": "20"
+}
+
+item_id_card = {
+    "id": "id card",
+
+    "name": "ID Card",
+
+    "description":
+    """An ID Card that can be used to get
+into Laboratory 2.""",
+
+    "mass": "20"
+}
 
 item_torch = {
     "id": "torch",
@@ -134,7 +157,7 @@ read it yourself.""",
     "mass" : "400" # we need to adjust the mass, currently it is either too low or too high.
 }
 
-item_beakers = { # there should be 3-5 of these around the map
+item_beakers = { 
     "id": "beakers",
 
     "name": "Beakers",
@@ -146,20 +169,6 @@ chemicals and scientific experiments.""",
     "mass" : "100" # we need to adjust the mass, currently it is either too low or too high.
 }
 
-item_watch = {
-    "id": "watch",
-
-    "name": "Dr. Gavigan's Pocketwatch",
-
-    "description":
-    """Dr. Gavigan's pocket watch, that must have fallen
-out of his pocket. Inside is, of course, a watch - it
-stands still. Next to it, a picture of him and his wife.
-She's rather beautiful, but you've never seen anything of
-her.""",
-
-    "mass" : "200" # we need to adjust the mass, currently it is either too low or too high.
-}
 
 item_substance2 = {
     "id": "substance2",
@@ -294,6 +303,7 @@ a make-shift disinfectant.""",
 # --------------------------------------------------------
 
 tools = {
+    "id card": item_id_card
     "torch": item_torch,
     "syringes bag": item_syringes_bag,
     "batteries": item_batteries,
@@ -304,9 +314,10 @@ tools = {
     "axe": item_axe,
     "notebook": item_notebook,
     "beakers": item_beakers,
-    "watch": item_watch,
     "substance2": item_substance2,
-    "substance3": item_substance3
+    "substance3": item_substance3,
+    "pen": item_pen
+    "mask": item_mask
 }
 
 food = {
