@@ -153,6 +153,15 @@ def print_help():
 
 def execute_go(direction):
     global current_room
+    if direction == "n":
+        direction = "north"
+    if direction == "e":
+        direction = "east"
+    if direction == "s":
+        direction = "south"
+    if direction == "w":
+        direction = "west"
+
     if is_valid_exit(current_room["exits"], direction):
         for i, x in current_room["exits"].items():
             if i == direction:
@@ -276,7 +285,14 @@ def execute_command(command):
             print("\n" + "-"*90 + "\n\nTaste what?")
 
     elif command[0] == "help":
-            print_help()
+        print_help()
+
+    elif command[0] == "exit":
+        check = normalise_input(input("Are you sure you want to exit the game. You will loose everything. (YES/NO): "), False)
+        if check == "yes":
+            exit()
+        elif len(check) >= 0:
+            print("\n" + "-"*90 + "\n\nThe Game Continues")
 
     elif command[0] == "no" and len(command[1]) >= 1 :
         print("\n" + "-"*90 + "\n\nWhat would you like to do with the:", command[1].capitalize())
@@ -313,25 +329,34 @@ def win_screen():
 
 def difficulty(level):
     global inventory
-    if level == "easy":
+    if level == "easy" or level == "e":
         inventory["health"] = 5
         print("\n" + "-"*90 + "\n\nyou chose easy, you have, 5 lives.")
-    elif level == "medium":
+        return True
+    elif level == "medium" or level == "m":
         inventory["health"] = 3
         print("\n" + "-"*90 + "\n\nyou chose easy, you have, 3 lives.")
-    elif level == "hard":
+        return True
+    elif level == "hard" or level == "h":
         inventory["health"] = 1
         print("\n" + "-"*90 + "\n\nyou chose easy, you have, 1 live, don't waste it.")
-    else:
-        prin("\n" + "-"*90 + "\n\nType a difficulty: easy, medium or hard.")
+        return True
+    elif len(level) >= 0:
+        print("\n" + "-"*90 + "\n\nType a difficulty: easy, medium or hard.")
+        return False
+    # else:
+    #     print("\n" + "-"*90 + "\n\nType a difficulty: easy, medium or hard.")
+    #     return False
+
 
 
 # This is the entry point of our program
 def main():
-    # Main game loop
-    put = input("Please choose a difficulty: EASY, MEDIUM or HARD: ")
-    difficulty(normalise_input(put, False))
+    dif_chosen = False
+    while not dif_chosen:
+        dif_chosen = difficulty(normalise_input(input("Please choose a difficulty: EASY, MEDIUM or HARD: "), False))
 
+    # Main game loop
     while int(inventory["health"]) > 0:
         # Display game status (room description, inventory etc.)
         print_room(current_room, current_room["tools"], current_room["food"])
