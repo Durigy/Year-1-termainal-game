@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 from time import time
 from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time
-from game_menu import Intro
 
 def print_room_items(tools, food):
     temp = []  # room tools
