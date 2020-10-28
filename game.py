@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-
-from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory
+from time import time
+from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time
 
 def print_room_items(tools, food):
     temp = []  # room tools
@@ -55,7 +55,8 @@ def print_room(room, tools, food):
 
 def print_player_info():
     print_inventory_items(inventory)
-    print("Your energy level is:", inventory["energy"], "\n")
+    energy_level()
+
 
 
 def exit_leads_to(exits, direction):
@@ -63,6 +64,59 @@ def exit_leads_to(exits, direction):
 
 def print_exit(direction, leads_to):
     print("GO " + direction.upper() + " to " + leads_to + ".")
+
+def energy_level():
+    global inventory
+    global old_time
+    if (time() - old_time) >= 200:
+        inventory["energy"] -= 10
+        old_time = time()
+    elif (time() - old_time) >= 180:
+        inventory["energy"] -= 9
+        old_time = time()
+    elif (time() - old_time) >= 160:
+        inventory["energy"] -= 8
+        old_time = time()
+    elif (time() - old_time) >= 140:
+        inventory["energy"] -= 7
+        old_time = time()
+    elif (time() - old_time) >= 120:
+        inventory["energy"] -= 6
+        old_time = time()
+    elif (time() - old_time) >= 100:
+        inventory["energy"] -= 5
+        old_time = time()
+    elif (time() - old_time) >= 80:
+        inventory["energy"] -= 4
+        old_time = time()
+    elif (time() - old_time) >= 60:
+        inventory["energy"] -= 3
+        old_time = time()
+    elif (time() - old_time) >= 40:
+        inventory["energy"] -= 2
+        old_time = time()
+    elif (time() - old_time) >= 20:
+        inventory["energy"] -= 1
+        old_time = time()
+
+
+    if inventory["energy"] > 5:
+        print("Your energy level is:", inventory["energy"], "\n")
+    elif inventory["energy"] > 3:
+        print("Your energy level is:", inventory["energy"], " - you need to eat before you die\n")
+    elif inventory["energy"] > 0:
+        print("Your energy level is:", inventory["energy"], " - you are about to die\n")
+    elif inventory["energy"] <= 0:
+        inventory["health"] -= 1
+        inventory["energy"] = 10
+    if inventory["health"] > 1:
+        print("You have", inventory["health"], "lives left\n")
+    else:
+        print("You have", inventory["health"], "life left\n")
+
+    if inventory["health"] <= 0:
+        death_screen()
+        exit()
 
 
 def print_menu(exits, tools, food, inv):
@@ -250,11 +304,14 @@ def move(exits, direction):
     # Next room to go to
     return spots[exits[direction]]
 
+def death_screen():
+    print("\n" + "-"*90 + "\n\nYou died, tray again later.\n\n" + "-"*90 + "\n")
+
 
 # This is the entry point of our program
 def main():
     # Main game loop
-    while True:
+    while inventory["health"] > 0:
         # Display game status (room description, inventory etc.)
         print_room(current_room, current_room["tools"], current_room["food"])
         print_player_info()

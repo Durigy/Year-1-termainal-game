@@ -3,7 +3,8 @@ from .map import rooms, roads
 from .spots import spots
 
 inventory = { # temporary testing inventory
-    "energy": 9,
+    "energy": 10,
+    "health": 1,
     "tools": ["batteries"],
     "food": ["mars bar"]
 }
