@@ -1,4 +1,4 @@
-def bordered(text):
+def user_interface(text):
     lines = text.splitlines()
     width = max(len(s) for s in lines)
     res = ['┌' + '─' * width + '┐']
