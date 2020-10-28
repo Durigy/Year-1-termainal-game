@@ -68,34 +68,35 @@ def print_exit(direction, leads_to):
 def energy_level():
     global inventory
     global old_time
-    if (time() - old_time) >= 200:
+    t =20
+    if (time() - old_time) >= t*10:
         inventory["energy"] -= 10
         old_time = time()
-    elif (time() - old_time) >= 180:
+    elif (time() - old_time) >= t*9:
         inventory["energy"] -= 9
         old_time = time()
-    elif (time() - old_time) >= 160:
+    elif (time() - old_time) >= t*8:
         inventory["energy"] -= 8
         old_time = time()
-    elif (time() - old_time) >= 140:
+    elif (time() - old_time) >= t*7:
         inventory["energy"] -= 7
         old_time = time()
-    elif (time() - old_time) >= 120:
+    elif (time() - old_time) >= t*6:
         inventory["energy"] -= 6
         old_time = time()
-    elif (time() - old_time) >= 100:
+    elif (time() - old_time) >= t*5:
         inventory["energy"] -= 5
         old_time = time()
-    elif (time() - old_time) >= 80:
+    elif (time() - old_time) >= t*4:
         inventory["energy"] -= 4
         old_time = time()
-    elif (time() - old_time) >= 60:
+    elif (time() - old_time) >= t*3:
         inventory["energy"] -= 3
         old_time = time()
-    elif (time() - old_time) >= 40:
+    elif (time() - old_time) >= t*2:
         inventory["energy"] -= 2
         old_time = time()
-    elif (time() - old_time) >= 20:
+    elif (time() - old_time) >= t*1:
         inventory["energy"] -= 1
         old_time = time()
 
