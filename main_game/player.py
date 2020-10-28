@@ -1,40 +1,55 @@
 from .items import tools, food
 from .map import rooms, roads
+from .spots import spots
 
-inventory = tool["id"]
-
-# Start game at the reception
-current_room = rooms["laboratory 1"]
-
-player_character = {
-    "name": "Character1",
-    "Occupation": "fill in",
-    "Strength": "100",
-    "Oxygen": "123",
-    "Energy": "100",
-    "inventory": []
+inventory = { # temporary testing inventory
+    "energy": 10,
+    "health": 1,
+    "tools": ["batteries"],
+    "food": ["mars bar"]
 }
 
-player_character1 = {
+# Start game at the lab 1 spot 1
+current_room = spots["lab2 centre"]
+
+player_addplayername0 = {
     "name": "Character1",
-    "Occupation": "fill in",
-    "Strength": "100",
-    "Oxygen": "123",
-    "Energy": "100",
-    "inventory": []
+    "occupation": "fill in",
+    "strength": "100",
+    "oxygen": "123",
+    "energy": "100",
+    "inventory": {
+        "tools": {},
+        "food": {}
+    }
 }
 
-player_character2 = {
+player_addplayername1 = {
     "name": "Character1",
-    "Occupation": "fill in",
-    "Strength": "100",
-    "Oxygen": "123",
-    "Energy": "100",
-    "inventory": []
+    "occupation": "fill in",
+    "strength": "100",
+    "oxygen": "123",
+    "energy": "100",
+    "inventory": {
+        "tools": {},
+        "food": {}
+    }
+}
+
+player_addplayername2 = {
+    "name": "Character1",
+    "occupation": "fill in",
+    "strength": "100",
+    "oxygen": "123",
+    "energy": "100",
+    "inventory": {
+        "tools": {},
+        "food": {}
+    }
 }
 
 characters = {
-    "Character" : player_character,
-    "Character1": player_character1,
-    "Character2": player_character2
+    "addplayername0" : player_addplayername0,
+    "addplayername1": player_addplayername1,
+    "addplayername2": player_addplayername2
 }

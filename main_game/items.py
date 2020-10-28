@@ -210,9 +210,9 @@ item_salted_crisps = {
     """A pack of Kettle Salted Crisps. You wonder if
 crisps go out of date.""",
 
-    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+    "energy" : 1, # we need to adjust the energy, currently it is either too low or too high.
 
-    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
+    "mass" : 10 # we need to adjust the mass, currently it is either too low or too high.
 }
 
 item_mars_bar = {
@@ -224,9 +224,9 @@ item_mars_bar = {
     """A mars bar - which looks very tempting right
 about now. Will it taste just like it used to?""",
 
-    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+    "energy" : 3, # we need to adjust the energy, currently it is either too low or too high.
 
-    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
+    "mass" : 10 # we need to adjust the mass, currently it is either too low or too high.
 }
 
 item_canned_beans = {
@@ -240,9 +240,9 @@ edible cold, just not as nice. It takes you back to
 beans on toast as your go-to meal when you were a
 university student.""",
 
-    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+    "energy" : 1, # we need to adjust the energy, currently it is either too low or too high.
 
-    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
+    "mass" : 10 # we need to adjust the mass, currently it is either too low or too high.
 }
 
 item_canned_potatoes = {
@@ -255,9 +255,9 @@ item_canned_potatoes = {
 to find out they're well within their expiry date. A
 filling so-called meal, nowadays.""",
 
-    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+    "energy" : 1, # we need to adjust the energy, currently it is either too low or too high.
 
-    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
+    "mass" : 10 # we need to adjust the mass, currently it is either too low or too high.
 }
 
 item_pickles = {
@@ -271,9 +271,9 @@ snack. He seems to have an endless amount of them -
 probably won't notice if one jar disappears. Afterall,
 how else did it get here?""",
 
-    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+    "energy" : 1, # we need to adjust the energy, currently it is either too low or too high.
 
-    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
+    "mass" : 10 # we need to adjust the mass, currently it is either too low or too high.
 }
 
 item_vodka = {
@@ -286,9 +286,9 @@ item_vodka = {
 the outside, but unopened - which will be useful as
 a make-shift disinfectant.""",
 
-    "energy" : "1", # we need to adjust the energy, currently it is either too low or too high.
+    "energy" : 1, # we need to adjust the energy, currently it is either too low or too high.
 
-    "mass" : "10" # we need to adjust the mass, currently it is either too low or too high.
+    "mass" : 10 # we need to adjust the mass, currently it is either too low or too high.
 }
 
 # --------------------------------------------------------
