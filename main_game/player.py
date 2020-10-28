@@ -3,8 +3,9 @@ from .map import rooms, roads
 from .spots import spots
 
 inventory = { # temporary testing inventory
+    "energy": 9,
     "tools": ["batteries"],
-    "food": []
+    "food": ["mars bar"]
 }
 
 # Start game at the lab 1 spot 1
@@ -12,10 +13,10 @@ current_room = spots["lab2 centre"]
 
 player_addplayername0 = {
     "name": "Character1",
-    "Occupation": "fill in",
-    "Strength": "100",
-    "Oxygen": "123",
-    "Energy": "100",
+    "occupation": "fill in",
+    "strength": "100",
+    "oxygen": "123",
+    "energy": "100",
     "inventory": {
         "tools": {},
         "food": {}
@@ -24,10 +25,10 @@ player_addplayername0 = {
 
 player_addplayername1 = {
     "name": "Character1",
-    "Occupation": "fill in",
-    "Strength": "100",
-    "Oxygen": "123",
-    "Energy": "100",
+    "occupation": "fill in",
+    "strength": "100",
+    "oxygen": "123",
+    "energy": "100",
     "inventory": {
         "tools": {},
         "food": {}
@@ -36,10 +37,10 @@ player_addplayername1 = {
 
 player_addplayername2 = {
     "name": "Character1",
-    "Occupation": "fill in",
-    "Strength": "100",
-    "Oxygen": "123",
-    "Energy": "100",
+    "occupation": "fill in",
+    "strength": "100",
+    "oxygen": "123",
+    "energy": "100",
     "inventory": {
         "tools": {},
         "food": {}

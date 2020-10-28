@@ -2,17 +2,30 @@ import string
 from .items import tools, food
 
 # # specialised_words = ["go", "take","drop","look","open","close","enter","leave","menu","eat","north","east","south","west","inventory","use"] # don't think we need all these anymore
-specialised_words = ["go", "take","drop","look","open","close","eat","use"]
+specialised_words = ["go", "move", "take", "pick up","drop", "release", "look", "open", "close", "eat", "taste", "use", "help"]
 direction = ["north","east","south","west"]
+
+def print_specialised_words():
+    print("\n" + "-"*90 + "\n")
+    print("You can type these commands: ", end='')
+    for i in specialised_words:
+        print(i.upper() + ", ", end='')
+    print()
 
 def filter_words(words):
     com = ""
     n = ""
     s = words.split()
-    for word in s:
-        for sWord in specialised_words:
-            if word == sWord:
-                com = word
+    # for word in s:
+    #     for sWord in specialised_words:
+    #         if word == sWord:
+    #             com = word
+    #     if len(com) == 0:
+    #         com = "no"
+
+    for x in specialised_words:
+        if x in words:
+            com = x
         if len(com) == 0:
             com = "no"
 
@@ -28,7 +41,6 @@ def filter_words(words):
     for x, y in food.items():
         if x in words:
             n = x
-
 
     new_word = [com, n]
     return new_word

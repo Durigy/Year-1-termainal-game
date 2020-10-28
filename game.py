@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from main_game import rooms, roads, spots, normalise_input, current_room, tools, food, inventory
+from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory
 
 def print_room_items(tools, food):
     temp = []  # room tools
@@ -13,7 +13,7 @@ def print_room_items(tools, food):
         temp.append(i)
     rfood = ", ".join(temp)
 
-    if (rtool and rfood):
+    if rtool and rfood:
         print("There is,", rtool + ",", rfood + ", in this part of the room.\n")
     elif rtool:
         print("There is,", rtool + ", in this part of the room.\n")
@@ -34,7 +34,7 @@ def print_inventory_items(players_inverntory):
         temp.append(i)
     ifood = ", ".join(temp)
 
-    if (itool and ifood):
+    if itool and ifood:
         print("You have,", itool + ",", ifood + ", in your inventory.\n")
     elif itool:
         print("You have,", itool + ", in your inventory.\n")
@@ -45,12 +45,17 @@ def print_inventory_items(players_inverntory):
 
 
 def print_room(room, tools, food):
-    print("\n------------------------------------------------------------------------------------------\n")
-    print(room["name"].upper(), "\n")
+    print("\n" + "-"*90 + "\n")
+    print(room["name"].upper(), "-", room["spot name"].upper(), "\n")
     # Display room description
-    print(room["description"], "\n")
+    print("--- Room Description ---\n" + room["main description"], "\n\n" + "--- Location Description ---\n" + room["description"], "\n")
 
     print_room_items(tools, food)
+
+
+def print_player_info():
+    print_inventory_items(inventory)
+    print("Your energy level is:", inventory["energy"], "\n")
 
 
 def exit_leads_to(exits, direction):
@@ -58,10 +63,6 @@ def exit_leads_to(exits, direction):
 
 def print_exit(direction, leads_to):
     print("GO " + direction.upper() + " to " + leads_to + ".")
-
-
-def tool_is(exits, direction):
-     return tools[exits[direction]]["name"]
 
 
 def print_menu(exits, tools, food, inv):
@@ -74,22 +75,25 @@ def print_menu(exits, tools, food, inv):
         print_exit(direction, exit_leads_to(exits, direction))
 
     for i in tools:
-        print("TAKE", i.upper(), "to take", i + ".")
+        print("TAKE", i.upper(), "to take the", i + ".")
 
     for i in food:
-        print("TAKE", i.upper(), "to take", i + ".")
+        print("TAKE", i.upper(), "to take the", i + ".")
 
     for i in inv["tools"]:
-        print("DROP", i.upper(), "to take", i + ".")
+        print("DROP", i.upper(), "to drop the", i + ".")
 
     for i in inv["food"]:
-        print("DROP", i.upper(), "to take", i + ".")
+        print("DROP", i.upper(), "to drop the", i , "or\n" + "EAT", i.upper(), "to eat the", i + ".")
 
-    print("What do you want to do?")
+    print("What would you like to do?")
 
 
 def is_valid_exit(exits, chosen_exit):
         return chosen_exit in exits
+
+def print_help():
+    print_specialised_words()
 
 
 def execute_go(direction):
@@ -97,43 +101,38 @@ def execute_go(direction):
     if is_valid_exit(current_room["exits"], direction):
         for i, x in current_room["exits"].items():
             if i == direction:
-                print("\n" + "You are moving to", spots[x]["name"])
+                print("\n" + "-"*90 + "\n\nYou are moving to", spots[x]["name"].capitalize())
                 current_room = spots[x]
     else:
-        print("\n" + "You cannot go there.")
+        print("\n" + "-"*90 + "\n\nYou cannot go there.")
 
-def is_valid_tool(room_tools, chosen_tool):
-    for a in room_tools:
-        if chosen_tool == a:
+
+def is_valid_item(room_item, chosen_item):
+    for a in room_item:
+        if chosen_item == a:
             return True
     return False
 
-def is_valid_food(room_food, chosen_food):
-    for a in room_food:
-        if chosen_food == a:
-            return True
-    return False
 
 def execute_take(item_id):
     global inventory
     global current_room
     cRT = current_room["tools"]
     cRF = current_room["food"]
-    if is_valid_tool(current_room["tools"], item_id):
+    if is_valid_item(current_room["tools"], item_id):
         for i in current_room["tools"]:
             if i == item_id:
                 inventory["tools"].append(i)
                 cRT.remove(i)
-                print("\n" + "You took the", item_id)
-    elif is_valid_tool(current_room["food"], item_id):
+                print("\n" + "-"*90 + "\n\nYou took the", item_id.capitalize())
+    elif is_valid_item(current_room["food"], item_id):
         for i in current_room["food"]:
             if i == item_id:
                 inventory["food"].append(i)
                 cRF.remove(i)
-                print("\n" + "You took the", item_id)
+                print("\n" + "-"*90 + "\n\nYou took the", item_id.capitalize())
     else:
-        print("\n" + "You cannot take that.")
-
+        print("\n" + "-"*90 + "\n\nYou cannot take that.")
 
 
 def execute_drop(item_id):
@@ -141,47 +140,97 @@ def execute_drop(item_id):
     global current_room
     cRT = current_room["tools"]
     cRF = current_room["food"]
-    if is_valid_tool(inventory["tools"], item_id):
+    if is_valid_item(inventory["tools"], item_id):
         for i in inventory["tools"]:
             if i == item_id:
                 inventory["tools"].remove(i)
                 cRT.append(i)
-                print("\n" + "You dropped the", item_id)
-    elif is_valid_tool(inventory["food"], item_id):
+                print("\n" + "-"*90 + "\n\nYou dropped the", item_id.capitalize())
+    elif is_valid_item(inventory["food"], item_id):
         for i in inventory["food"]:
             if i == item_id:
                 inventory["food"].remove(i)
                 cRF.append(i)
-                print("\n" + "You dropped the", item_id)
+                print("\n" + "-"*90 + "\n\nYou dropped the", item_id.capitalize())
     else:
-        print("\n" + "You cannot drop that.")
+        print("\n" + "-"*90 + "\n\nYou cannot drop that.")
+
+
+def execute_eat(item_id):
+    global inventory
+    global current_room
+    cRF = current_room["food"]
+    if is_valid_item(inventory["food"], item_id):
+        for i in inventory["food"]:
+            if i == item_id:
+                inventory["food"].remove(i)
+                if inventory["energy"] < 10:
+                    if (inventory["energy"] + food[item_id]["energy"]) > 10:
+                        inventory["energy"] = 10
+                    else:
+                        inventory["energy"] += food[item_id]["energy"]
+                print("\n" + "-"*90 + "\n\nYou ate the", item_id.capitalize(), "which had", food[item_id]["energy"], "energy.")
+    else:
+        print("\n" + "-"*90 + "\n\nYou cannot eat that.")
+
+def execute_taste(item_id):
+    global inventory
+    global current_room
+    if is_valid_item(inventory["food"], item_id):
+        for i in inventory["food"]:
+            if i == item_id:
+                print("\n" + "-"*90 + "\n\nYou tasted the", item_id.capitalize(), "and it is goooood. Also, it has", food[item_id]["energy"], "energy.")
+    elif is_valid_item(inventory["tools"], item_id):
+        for i in inventory["tools"]:
+            if i == item_id:
+                print("\n" + "-"*90 + "\n\nEwwww! Don't lick that, that is disgusting.")
+    else:
+        print("\n" + "-"*90 + "\n\nYou cannot taste that.")
+
 
 def execute_command(command):
-    if 0 == len(command):
-        return
-
-    if command[0] == "go":
+    if command[0] == "go" or command[0] == "move":
         if len(command[1]) >= 1:
             execute_go(command[1])
         elif len(command[1]) <= 1:
-            print("\nGo where?")
+            print("\n" + "-"*90 + "\n\nGo where?")
 
-    elif command[0] == "take":
+
+    elif command[0] == "take" or command[0] == "pick up":
         if len(command[1]) >= 1:
             execute_take(command[1])
         elif len(command[1]) <= 1:
-            print("\nTake what?")
+            print("\n" + "-"*90 + "\n\nTake what?")
 
-    elif command[0] == "drop":
+    elif command[0] == "drop" or command[0] == "release":
         if len(command[1]) >= 1:
             execute_drop(command[1])
         elif len(command[1]) <= 1:
-            print("\nDrop what?")
+            print("\n" + "-"*90 + "\n\nDrop what?")
+
+    elif command[0] == "eat":
+        if len(command[1]) >= 1:
+            execute_eat(command[1])
+        elif len(command[1]) <= 1:
+            print("\n" + "-"*90 + "\n\nEat what?")
+
+    elif command[0] == "taste":
+        if len(command[1]) >= 1:
+            execute_taste(command[1])
+        elif len(command[1]) <= 1:
+            print("\n" + "-"*90 + "\n\nTaste what?")
+
+    elif command[0] == "help":
+            print_help()
 
     elif command[0] == "no" and len(command[1]) >= 1 :
-        print("\nPlease type something")
+        print("\n" + "-"*90 + "\n\nWhat would you like to do with the:", command[1].capitalize())
+
+    elif command[0] == "no" and len(command[1]) <= 1 :
+        print("\n" + "-"*90 + "\n\nPlease type something")
+
     else:
-        print("\nThis makes no sense.")
+        print("\n" + "-"*90 + "\n\nThis makes no sense.")
 
 
 def menu(exits, tools, food, inv):
@@ -208,7 +257,7 @@ def main():
     while True:
         # Display game status (room description, inventory etc.)
         print_room(current_room, current_room["tools"], current_room["food"])
-        print_inventory_items(inventory)
+        print_player_info()
 
         # Show the menu with possible actions and ask the player
         command = menu(current_room["exits"], current_room["tools"], current_room["food"], inventory)
