@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from time import time
-from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time, user_interface
+from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time#, user_interface
 
 def print_room_items(tools, food):
     temp = []  # room tools
@@ -282,7 +282,7 @@ def execute_command(command):
         print("\n" + "-"*90 + "\n\nWhat would you like to do with the:", command[1].capitalize())
 
     elif command[0] == "no" and len(command[1]) <= 1 :
-        print("\n" + "-"*90 + "\n\nPlease type something")
+        print("\n" + "-"*90 + "\n\nPlease type something useful")
 
     else:
         print("\n" + "-"*90 + "\n\nThis makes no sense.")
@@ -308,11 +308,31 @@ def move(exits, direction):
 def death_screen():
     print("\n" + "-"*90 + "\n\nYou died, tray again later.\n\n" + "-"*90 + "\n")
 
+def win_screen():
+    print("\n" + "-"*90 + "\n\nYou died, tray again later.\n\n" + "-"*90 + "\n")
+
+def difficulty(level):
+    global inventory
+    if level == "easy":
+        inventory["health"] = 5
+        print("\n" + "-"*90 + "\n\nyou chose easy, you have, 5 lives.")
+    elif level == "medium":
+        inventory["health"] = 3
+        print("\n" + "-"*90 + "\n\nyou chose easy, you have, 3 lives.")
+    elif level == "hard":
+        inventory["health"] = 1
+        print("\n" + "-"*90 + "\n\nyou chose easy, you have, 1 live, don't waste it.")
+    else:
+        prin("\n" + "-"*90 + "\n\nType a difficulty: easy, medium or hard.")
+
 
 # This is the entry point of our program
 def main():
     # Main game loop
-    while inventory["health"] > 0:
+    put = input("Please choose a difficulty: EASY, MEDIUM or HARD: ")
+    difficulty(normalise_input(put, False))
+
+    while int(inventory["health"]) > 0:
         # Display game status (room description, inventory etc.)
         print_room(current_room, current_room["tools"], current_room["food"])
         print_player_info()
