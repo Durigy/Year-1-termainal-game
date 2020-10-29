@@ -16,7 +16,7 @@ def exit_leads_to(exits, direction):
 def energy_level():
     global inventory
     global old_time
-    t = 20
+    t = 45
     if (time() - old_time) >= t*10:
         inventory["energy"] -= 10
         old_time = time()
