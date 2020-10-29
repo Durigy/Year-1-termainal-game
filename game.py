@@ -345,7 +345,7 @@ def death_screen():
     from game_menu import youdied
 
 def win_screen():
-    print("\n" + "-"*90 + "\n\nYou died, tray again later.\n\n" + "-"*90 + "\n")
+    from game_menu import youwon
 
 def difficulty(level):
     global inventory
@@ -375,7 +375,7 @@ def main():
 
     # Main game loop
 <<<<<<< HEAD
-    Intro
+    from game_menu import Intro
     while inventory["health"] > 0:
         # Display game status (room description, inventory etc.)
         print_room(current_room, current_room["tools"], current_room["food"])
