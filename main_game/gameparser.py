@@ -10,11 +10,10 @@ direction = ["north","east","south","west", "n","e","s","w"]
 old_time = time()
 
 def print_specialised_words():
-    print("\n" + "-"*90 + "\n")
-    print("You can type these commands: ", end='')
+    text = ''
     for i in specialised_words:
-        print(i.upper() + ", ", end='')
-    print()
+        text += i.upper() + ", "
+    return text
 
 def filter_words(words):
     com = ""

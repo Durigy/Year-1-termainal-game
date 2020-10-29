@@ -7,72 +7,11 @@ def user_interface(text):
     res.append('└' + '─' * width + '┘')
     return '\n'.join(res)
 
-def go_wh(info):
-    left_remaining = 64 - len(info)
-    right_remaining = 65 - len(info)
+def info(info, left_leng, right_leng):
+    left_remaining = left_leng - len(info)
+    right_remaining = right_leng - len(info)
     text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
     print (text)
-
-def take_wh(info):
-    left_remaining = 65 - len(info)
-    right_remaining = 65 - len(info)
-    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
-
-def eat_wh(info):
-    left_remaining = 64 - len(info)
-    right_remaining = 65 - len(info)
-    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
-    print (text)
-
-def taste_wh(info):
-    left_remaining = 65 - len(info)
-    right_remaining = 66 - len(info)
-    text = user_interface("-" * left_remaining + "User Info: " + info + "-" * right_remaining)
-    print (text)
-
-
-def go_ct(info):
-    left_remaining = 70 - len(info)
-    right_remaining = 70 - len(info)
-    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
-    print(text)
-
-def take_ct(info):
-    left_remaining = 70 - len(info)
-    right_remaining = 70 - len(info)
-    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
-    print (text)
-
-def eat_ct(info):
-    left_remaining = 70 - len(info)
-    right_remaining = 70 - len(info)
-    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
-    print (text)
-
-def taste_ct(info):
-    left_remaining = 70 - len(info)
-    right_remaining = 70 - len(info)
-    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
-    print (text)
-
-def taste_info(info):
-    left_remaining = 70 - len(info)
-    right_remaining = 70 - len(info)
-    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
-    print (text)
-
-def taste_ew(info):
-    left_remaining = 70 - len(info)
-    right_remaining = 70 - len(info)
-    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
-    print (text)
-
-def game_con(info):
-    left_remaining = 70 - len(info)
-    right_remaining = 70 - len(info)
-    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
-    print (text)
-
 
 def header(room, spot, lives, energy):
 

@@ -259,7 +259,7 @@ a make-shift disinfectant.""",
 # --------------------------------------------------------
 
 tools = {
-    "id card": item_id_card
+    "id card": item_id_card,
     "torch": item_torch,
     "syringes bag": item_syringes_bag,
     "batteries": item_batteries,
@@ -272,7 +272,7 @@ tools = {
     "beakers": item_beakers,
     "substance2": item_substance2,
     "substance3": item_substance3,
-    "pen": item_pen
+    "pen": item_pen,
     "mask": item_mask
 }
 

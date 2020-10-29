@@ -17,8 +17,8 @@ l_entrance_hc = {
 if you complete the mini-game you'll be
 able to access the inside.
 By your feet is a dirty ID card.
-Going east will take you to the entrance
-of Herod Close, and north will allow you
+Going EAST will take you to the entrance
+of Herod Close, and NORTH will allow you
 to attempt access to the Library.""",
 
     "exits": {"east": "hc entrance", "north": "mystery aisle"},
@@ -83,8 +83,8 @@ entrance_hc = {
     "spot name": "HC Entrance",
 
     "description":
-    """You can go west to the entrance of
-the library, or leave south onto Herod
+    """You can go WEST to the entrance of
+the library, or leave SOUTH onto Herod
 Street.""",
     
     "exits": {"west": "library entrance", "south": "lab 1 entrance"},
@@ -103,7 +103,7 @@ Street.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -153,9 +153,9 @@ lab1_entrance_hs = {
 facing Laboratory 1. Through the window you
 can see that it's dirty and dingy - but what
 needs to be clean is clean.
-Going north will take you to herod close,
-west will take you into the laboratory and
-south to the entrance of main street and the
+Going NORTH will take you to herod close,
+WEST will take you into the laboratory and
+SOUTH to the entrance of main street and the
 carpark.""",
 
     "exits": {"north": "hc entrance", "south": "carpark main str entrance", "west": "lab1 main entrance"}, 
@@ -174,7 +174,7 @@ carpark.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -225,8 +225,8 @@ Main Street.
 Looking into the desolate car park, you can
 see cars have begun to rust - unusable now that
 necessities have been stripped from them.
-To go into the carpark, go west. To go onto
-Main Street, go east.""",
+To go into the carpark, go WEST. To go onto
+Main Street, go EAST.""",
 
     "exits": {"east": "shop front", "west": "carpark entrance", "north": "lab 1 entrance"},
 
@@ -244,7 +244,7 @@ Main Street, go east.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -293,9 +293,9 @@ front_shop = {
     """Standing in front of the shop,
 you can see that the aisles are either
 blocked or mostly empty within.
-You can go south to enter the shop, go
-east to go in front of The Plough or go
-west to enter Herod Street.""",
+You can go SOUTH to enter the shop, go
+EAST to go in front of The Plough or go
+WEST to enter Herod Street.""",
     
     "exits": {"south": "shop entrance", "east": "pub front", "west": "carpark main str entrance"},
 
@@ -313,7 +313,7 @@ west to enter Herod Street.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -362,9 +362,9 @@ front_pub = {
 Plough, which used to be creepy old men's
 go to place when they can't be bothered
 to argue with their wife.
-To enter it, you go south. Going west
+To enter it, you go SOUTH. Going WEST
 takes you to the front of the shop, and
-east to infront of the alleyway.""",
+EAST to infront of the alleyway.""",
 
     "exits": {"east": "alley front", "south": "pub centre", "west": "shop front"},
 
@@ -382,7 +382,7 @@ east to infront of the alleyway.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -404,7 +404,7 @@ east to infront of the alleyway.""",
 |* +-/ /----------------+        |_________________________________________________________________|        |    \          /   |  *|
 |* |  x                 |                                                                                   |     \        |    |  *|
 |* |                    |                                     MAIN STREET                                   |     /         \   |  *|
-|* |                  x /  x                     x                                 x                   x    |     |         /   |  *|
+|* |                  x /  x                     x                               [HERE]                x    |     |         /   |  *|
 |* |      CARPARK       /           +-----------/ /--------------+__+-------------/ /-------------+         |      \       / x  |  *|
 |* |                    |           |            x               |  |                           x |         |        \___/      |  *|
 |* |                    |           |   x      SHOP              |  |        PUB   x              |         |                   |  *|
@@ -431,9 +431,9 @@ front_alley = {
 Main Street, standing by a dark and gloomy
 alley way that's probably always been as such,
 and on the cusp of Isiah Road.
-To enter the alleyway, go south. Or,
-you can go north onto Isiah Road or
-west to the pub front.""",
+To enter the alleyway, go SOUTH. Or,
+you can go NORTH onto Isiah Road or
+WEST to the pub front.""",
 
     "exits": {"south": "alley entrance", "north": "ir centre", "west": "pub front"},
 
@@ -451,7 +451,7 @@ west to the pub front.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -498,11 +498,11 @@ ir_centre = {
 
     "description":
         """You're now standing in Isiah Road.
-To your right (east) is Willow Park, where nature
+To your right (EAST) is Willow Park, where nature
 and life has bloomed after it could no longer be
 kept neat and tidy. A willow tree bends above a
 pond.
-To your south is Main Street, going north will take
+To your SOUTH is Main Street, going NORTH will take
 you to inbetween a windy path and in front of the
 entrance to Laboratory 2.""",
 
@@ -522,7 +522,7 @@ entrance to Laboratory 2.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -572,8 +572,8 @@ Isiah Road. To your right is Laboratory 2. You can
 see Dr. Gavigan within, on his wheelchair - he's
 patiently waiting to make the vaccine. You'll need
 an ID Card to enter, however.
-To attempt entering Lab 2, go east. South will take
-you down to where the park is, and west will take
+To attempt entering Lab 2, go EAST. SOUTH will take
+you down to where the park is, and WEST will take
 you down a windy, cobblestone path.""",
 
     "exits": {"east": "lab2 main entrance", "south": "ir centre", "west": "w centre"},
@@ -592,7 +592,7 @@ you down a windy, cobblestone path.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -638,9 +638,9 @@ windy_centre = {
     "spot name": "W Centre",
 
     "description":
-        """You can either go north, to investigate
-the nest. East will take you to Isiah Road, south
-to the box and west goes straight to the library.""",
+        """You can either go NORTH, to investigate
+the nest. EAST will take you to Isiah Road, SOUTH
+to the box and WEST goes straight to the library.""",
 
     "exits": {"north": "birds nest", "east": "ir north centre", "south": "box", "west": "library side entrance"},
 
@@ -658,7 +658,7 @@ to the box and west goes straight to the library.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -707,10 +707,12 @@ birds_nest = {
         """The pigeon gives you a stern glare as
 you approach it - but becomes skittish and flies to
 another tree when you get to close. In her nest are
-eggs and a vial, labelled 'Substance 2'. At the base
-of the tree, there is a pack of salted crips.
-Going west will take you straight to the library,
-east to Isiah Road and south back onto the cobblestone
+eggs and a vial, labelled 'Substance 2'. You wonder
+if the pigeon is, in fact, a thief. At the base
+of the tree, there is a pack of salted crips, untouched.
+You wonder if crisps have an expiry date.
+Going WEST will take you straight to the library,
+EAST to Isiah Road and SOUTH back onto the cobblestone
 path.""",
 
     "exits": {"west": "library side entrance", "east": "ir north centre", "south": "w centre"},
@@ -781,8 +783,8 @@ gone from their eyes. At the base of the fence
 is a cardboard box, half-open. Inside, there
 are a lot of beakers! These will come in handy.
 Among them, there is also a can of beans.
-To go back to the path, go north. Going west will
-take you straight to the library, and east will
+To go back to the path, go NORTH. Going WEST will
+take you straight to the library, and EAST will
 take you back onto Isiah Road.""",
 
     "exits": {"north": "w centre", "east": "ir north centre", "west": "library side entrance"},
@@ -801,7 +803,7 @@ take you back onto Isiah Road.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -853,8 +855,8 @@ cp_lab1_side_entrance = {
         """The side entrance to Lab 1, the door
 is slowly rusting. Behind you, you notice a car with
 the door wide open.
-Go go inside Laboratory 1, go north. To return to
-the carpark entrance, go east. Going south  will
+Go go inside Laboratory 1, go NORTH. To return to
+the carpark entrance, go EAST. Going SOUTH  will
 lead you to the car.""",
 
     "exits": {"east": "carpark entrance", "north": "lab 1 side entrance", "south": "car"},
@@ -873,7 +875,7 @@ lead you to the car.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -922,7 +924,7 @@ carpark_entrance = {
     "description":
         """You are now by the entrance of
 the car park, next to Herod Street. To go onto
-Herod Street, go east. Going west will take
+Herod Street, go EAST. Going WEST will take
 you to the side entrance of Laboratory 1.""",
 
     "exits": {"east": "carpark main str entrance", "west": "cp lab 1 side entrance"},
@@ -941,7 +943,7 @@ you to the side entrance of Laboratory 1.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -992,8 +994,8 @@ Looking inside, there is a torch - without
 batteries, however. By the pedal you notice a
 can of new potatoes - you hope they'll still
 be good enough to eat.
-To go to the side entrance of Lab 1, go north.
-Going east will take you to the entrance of the
+To go to the side entrance of Lab 1, go NORTH.
+Going EAST will take you to the entrance of the
 carpark.""",
 
     "exits": {"north": "cp lab 1 side entrance", "east": "carpark entrance"},
@@ -1012,7 +1014,7 @@ carpark.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1060,9 +1062,9 @@ lab1_main_entrance = {
 
     "description":
         """You're now in lab 1, by the main
-entrance. To your north is a desk, and to your
-west is the side entrance - that leads to the
-carpark. To go onto Herod Street, go east.""",
+entrance. To your NORTH is a desk, and to your
+WEST is the side entrance - that leads to the
+carpark. To go onto Herod Street, go EAST.""",
 
     "exits": {"north": "desk", "west": "lab 1 side entrance", "east": "lab 1 entrance"},
 
@@ -1080,7 +1082,7 @@ carpark. To go onto Herod Street, go east.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1126,9 +1128,13 @@ lab1_side_entrance = {
 
     "description":
     """You're now by the side entrance of the
-laboratory. Leaving through it, to the south,
-will take you into the carpark. Going north
-will take you to the syringe cupboard, and east
+laboratory. It's less rusted on the inside than
+out, but it still manages to open. You wonder how
+many times scientists and technicians of the past
+made their way through here.
+Leaving through it, to the SOUTH,
+will take you into the carpark. Going NORTH
+will take you to the syringe cupboard, and EAST
 back to the main entrance.""",
 
     "exits": {"south": "cp lab 1 side entrance", "north": "syringe cupboard", "east": "lab1 main entrance"},
@@ -1147,7 +1153,7 @@ back to the main entrance.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1198,8 +1204,8 @@ formulas Dr. Gavigan has created. Next to it,
 there's a notebook - but any pens in sight
 have run out of ink! To make up for it, however,
 there is a bag of salted crisps.
-Going west will take you to the syringe
-cupboard, and south will take you to the main
+Going WEST will take you to the syringe
+cupboard, and SOUTH will take you to the main
 entrance.""",
 
     "exits": {"west": "syringe cupboard", "south": "lab1 main entrance"},
@@ -1218,7 +1224,7 @@ entrance.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1268,11 +1274,12 @@ wide open, but you first notice a can of
 beans!
 After taking a peak inside, you realise the syringe
 cupboard has lived up to it's purpose; the
-bag is full of syringes. You also discover,
-next to the bag, there is a vial that is
-labelled 'Substance 1'.
-Going east will take you to the desk, and
-south will take you to the side entrance.""",
+bag is full of empty syringes. You also discover,
+next to the bag, there is a vial that is labelled
+'Substance 1'. Seems like Dr. Gavigan left it in a
+somewhat normal place, for once.
+Going EAST will take you to the desk, and
+SOUTH will take you to the side entrance.""",
 
     "exits": {"east": "desk", "south": "lab 1 side entrance"},
         
@@ -1290,7 +1297,7 @@ south will take you to the side entrance.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1343,8 +1350,8 @@ top next to you, there's a singular clean
 mask kept in a pack, from a pandemic a
 decade ago. Beside it is an unopened can
 of potatoes. 
-To go to the cleaning aisle, go west.
-Going north will take you back onto Main Street.""",
+To go to the cleaning aisle, go WEST.
+Going NORTH will take you back onto Main Street.""",
     
     "exits": {"north": "shop front", "west": "cleaning aisle"},
 
@@ -1362,7 +1369,7 @@ Going north will take you back onto Main Street.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1413,7 +1420,7 @@ want limescale remover in a zombie
 apocalypse, after all. Sure enough, there's
 a disinfectant product that would prove
 useful. Next to it, there is a lone pen.
-You can only go east from here, back to
+You can only go EAST from here, back to
 the shop entrance.""",
 
     "exits": {"east": "shop entrance"},
@@ -1432,7 +1439,7 @@ the shop entrance.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1480,9 +1487,9 @@ pub_centre = {
     "spot name": "Pub Centre",
     
     "description":
-    """You can go north onto Main
-Street, go east to get behind the bar or
-go south to leave into the alleyway.""",
+    """You can go NORTH onto Main
+Street, go EAST to get behind the bar or
+go SOUTH to leave into the alleyway.""",
     
     "exits": {"north": "pub front", "east": "behind bar", "south": "pub back entrance"},
 
@@ -1500,7 +1507,7 @@ go south to leave into the alleyway.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1570,7 +1577,7 @@ for the laptop.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1618,8 +1625,8 @@ alley_entrance = {
     "description":
     """You stand on the corner of the alley,
 next to the light of Main Street.
-To go onto Main Street, go north. Going
-west will take you to the back entrance of
+To go onto Main Street, go NORTH. Going
+WEST will take you to the back entrance of
 the pub - beside it is a dog kennel.""",
 
     "exits": {"north": "alley front", "west": "pub back entrance"},
@@ -1638,7 +1645,7 @@ the pub - beside it is a dog kennel.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1688,8 +1695,8 @@ the top coming off of it's hinges. Beside the
 door is a dogs kennel - and within that is
 an axe. It was probably used in ridding of
 the undead that once lived in the alleyway.
-To enter the pub, go north. To go to the
-entrance of the alley, go east.""",
+To enter the pub, go NORTH. To go to the
+entrance of the alley, go EAST.""",
 
     "exits": {"north": "pub centre", "east": "alley entrance"},
 
@@ -1707,7 +1714,7 @@ entrance of the alley, go east.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1758,8 +1765,8 @@ lab2_main_entrance = {
 looking especially frail today. 'Have you
 got anything for me? Put it on the tabletop!'
 He says.
-To go to the tabletop, go east. To go back
-onto Isiah Road, go west.""",
+To go to the tabletop, go EAST. To go back
+onto Isiah Road, go WEST.""",
 
     "exits": {"east": "tabletop", "west": "ir north centre"},
 
@@ -1777,7 +1784,7 @@ onto Isiah Road, go west.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1827,7 +1834,7 @@ where Dr. Gavigan expects you to drop items
 that he'll need. For you to take, there is a
 chocolate bar.
 To go back to the entrance of the laboratory,
-go west.""",
+go WEST.""",
 
     "exits": {"west": "lab2 main entrance"},
 
@@ -1845,7 +1852,7 @@ go west.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1894,7 +1901,7 @@ contam_area = {
     """On the floor, by the door, there is another
 unopened jar of pickles. You wonder if it's
 Dr. Gavigan's favourite food item.
-To leave the room, go south.""",
+To leave the room, go SOUTH.""",
 
     "exits": {"south": "p lab2 side entrance"},
 
@@ -1912,7 +1919,7 @@ To leave the room, go south.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |                    | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -1962,7 +1969,7 @@ park_entrance = {
 area is blocked off. On top of a bin next to you,
 you find a pack of batteries - they'll work for a
 torch.
-You can go east to the Willow tree, or return west
+You can go EAST to the Willow tree, or return WEST
 onto Isiah Road.""",
     
     "exits": {"east": "willow tree", "west": "ir centre"},
@@ -1981,7 +1988,7 @@ onto Isiah Road.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |             x      | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -2039,8 +2046,8 @@ Looking up, you can just see over the mound
 of boxes and barriers the door to the
 contaminated area. Perhaps, with an axe,
 you can make it through.
-From here, you can attempt going north to
-the contaminated room entrance, or west to
+From here, you can attempt going NORTH to
+the contaminated room entrance, or WEST to
 return to the park entrance.""",
 
     "exits": {"north": "p lab2 side entrance", "west": "park entrance"},
@@ -2059,7 +2066,7 @@ return to the park entrance.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |             x      | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -2107,7 +2114,10 @@ p_lab2_side_entrance = {
     "description":
     """You've managed to get behind the barrier,
 but you still need a mask to get in the contaminated
-area. It's not a bad idea to have a mask on either!""",
+area. It's not a bad idea to have a mask on either!
+Going NORTH will take you inside the building, but
+you must have a mask on you. SOUTH will take you back
+to the Willow Tree.""",
     
     "exits": {"north": "contam area centre", "south": "willow tree"},
 
@@ -2125,7 +2135,7 @@ area. It's not a bad idea to have a mask on either!""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |             x      | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -2176,8 +2186,8 @@ l_side_entrance = {
     """You're now standing in the
 centre of the library - drops of water
 drip from the tiles above.
-Going east will take you to the windy
-path and west to the mystery aisle.""",
+Going EAST will take you to the windy
+path and WEST to the mystery aisle.""",
     
     "exits": {"east": "w centre", "west": "mystery aisle"},
 
@@ -2195,7 +2205,7 @@ path and west to the mystery aisle.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |             x      | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY  [HERE] /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|
@@ -2246,8 +2256,10 @@ mystery_aisle = {
 darkness, you'll need a torch - but remember
 batteries aren't always included! There's also
 a chocolate bar - you hope that it still tastes
-okay.
-You can go east to go back to the side
+okay. The wrapper is covered in dust, there's
+even a small spider crawling across it, which
+only makes your spine shiver.
+You can go EAST to go back to the side
 entrance of the library. """,
 
     "exits": {"east": "library side entrance", "south": "library entrance"},
@@ -2267,7 +2279,7 @@ finda rather dusty vial - labelled 'Substance 3'.""",
 |                                                                                                                                   |
 |***********************************************************************************************************************************|
 |* +----------------------+                                                                         ________+--------------------+ *|
-|* |                      |                                              x                         |        |             x      | *|
+|* |                      |                                               x                        |        |                    | *|
 |* |                      |___     ____________        ________________        _____________       |        |                    | *|
 |* |                      /   \   /            \      /   WINDY PATH    \     /             \      |        |                    | *|
 |* |      LIBRARY      x  /    \_/   _______    \____/    ___________    \___/    _______    \_____|        |        LAB 2       | *|

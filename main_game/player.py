@@ -6,7 +6,7 @@ inventory = { # temporary testing inventory
     "energy": 10,
     "health": 1,
     "tools": ["batteries"],
-    "food": ["mars bar"]
+    "food": ["chocolate bar"]
 }
 
 # Start game at the lab 1 spot 1
