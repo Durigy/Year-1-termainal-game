@@ -3,17 +3,17 @@ from time import time
 from .items import tools, food
 
 # # specialised_words = ["go", "take","drop","look","open","close","enter","leave","menu","eat","north","east","south","west","inventory","use"] # don't think we need all these anymore
-specialised_words = ["go", "move", "take", "pick up","drop", "release", "look", "open", "close", "eat", "taste", "use", "help"]
-direction = ["north","east","south","west"]
+specialised_words = ["go", "move", "take", "pick up","drop", "release", "look", "eat", "taste", "use", "help", "exit"]
+direction = ["north","east","south","west", "n","e","s","w"]
+#difficulty = ["easy","medium","hard", "e","m","h"]
 
 old_time = time()
 
 def print_specialised_words():
-    print("\n" + "-"*90 + "\n")
-    print("You can type these commands: ", end='')
+    text = ''
     for i in specialised_words:
-        print(i.upper() + ", ", end='')
-    print()
+        text += i.upper() + ", "
+    return text
 
 def filter_words(words):
     com = ""
@@ -31,6 +31,12 @@ def filter_words(words):
             com = x
         if len(com) == 0:
             com = "no"
+
+    # for word in s:
+    #     for sWord in difficulty:
+    #         if word == sWord:
+    #             n = word
+    #             com = "difficulty"
 
     for word in s:
         for sWord in direction:

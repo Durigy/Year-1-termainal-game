@@ -9,33 +9,30 @@ blood plastered along the wall of Laboratory 1.
 The Library - boarded up in an attempt to keep
 the hoards out. They needn't bother, though, as
 the end of the street is blocked off with a large,
-stone gate long ago. A single lamppost, who produces
-no light, stands in front of the library window.""",
+stone gate long ago.""",
 
-    "spots": {"lamppost": "lamppost_herodclose", "centre": "herodclose_centre"},
+    "spots": {"library entrance": "l_entrance_hc", "entrance": "entrance_hc"},
 }
 
 road_lab1 = {
     "name": "Herod Street",
 
     "description":
-    """You are standing in front of Lab 1, which
-has seen better days. The air is empty and cold -
-life beyond survival is non-existent.""",
+    """You are standing in Herod Street, which
+has undoubtedly seen better days. The air is
+empty and cold - life beyond survival is
+non-existent.""",
 
-    "spots": {"centre": "herodstreet_centre"}   
+    "spots": {"lab 1 entrance": "lab1_entrance_hs", "carpark main str entrance": "ms_cp_entrance"}   
 }
 
 room_carpark = {
     "name": "Car Park",
 
     "description":
-    """You are standing in the desolate car park;
-cars have begun to rust - unusable now the
-necessities have been stripped from them. The
-closest to you is a blue car.""",
+    "",
 
-    "spots": {"side entrance": "lab1_side_entrance", "blue car": "blue_car", "silver car": "silver_car", "black car": "black_car", "centre": "carpark_centre"},
+    "spots": {"cp lab 1 side entrance": "cp_lab1_side_entrance", "carpark entrance": "carpark_entrance", "car": "spot_car"},
     
 }
 
@@ -43,15 +40,9 @@ room_lab1 = {
     "name": "Laboratory 1",
 
     "description":
-    """You are now in the Lab 1 building,
-it may be a bit dirty and dingy, but what
-needs to be clean is clean. A old, blocky
-laptop is sat on the desk - turned on. In
-the lab, there is a chemical cupboard,
-syringe cupboard, a bookshelf and the side
-entrance.""",
+    "",
 
-    "spots": {"chemical cupboard": "chemical_cupboard", "syringe cupboard": "syringe_cupboard", "desk": "spot_desk", "side entrance": "lab1_side_entrance", "bookshelf": "spot_bookshelf"},
+    "spots": {"lab1 main entrance": "lab1_main_entrance", "lab 1 side entrance": "lab1_side_entrance", "desk": "spot_desk", "syringe cupboard": "syringe_cupboard"},
     
 }
 
@@ -64,7 +55,7 @@ used to be full of life. It now stands eerily
 still. You can't even hear the refugees in
 the houses.""",
 
-    "spots": {"centre": "main_centre", "shop front": "front_shop", "binbag": "spot_binbag", "pub front": "front_pub", "alleyway front": "front_alley"},
+    "spots": {"shop front": "front_shop", "pub front": "front_pub", "alley front": "front_alley"},
     
 }
 
@@ -72,12 +63,9 @@ room_shop = {
     "name" : "Shop",
 
     "description":
-    """You're now standing in the
-shop, at the entrance. A few of the
-aisles are blocked, and some are just
-clean empty.""",
+    "",
 
-    "spots": {"shop entrance": "shop_entrance", "crisps aisle": "crisps_aisle", "cleaning aisle": "cleaning_aisle", "cans aisle": "cans_aisle"},
+    "spots": {"shop entrance": "shop_entrance", "cleaning aisle": "cleaning_aisle"},
     
 }
 
@@ -85,10 +73,7 @@ room_pub = {
     "name": "The Plough",
 
     "description":
-    """You are now inside the pub, where all the
-expensive brands of the past have laid there,
-relatively untouched. Now, you can go behind the
-bar without having someone shout at you.""",
+    "",
 
     "spots": {"centre": "pub_centre", "behind bar": "behind_bar"},
 
@@ -98,14 +83,9 @@ room_alleyway = {
     "name": "Alleyway",
 
     "description":
-    """You are now in the alleyway, which
-has likely never seen better days. At the far
-end, there is a rustling noise in the industrial
-bin that unsettles you greatly. For some
-reason, there's an empty dog kennel by the
-pub's back door.""",
+    "",
 
-    "spots": {"centre": "alley_centre", "bin": "industrial_bin", "dog kennel": "dog_kennel", "street entrance": "entrance_street"},
+    "spots": {"alley entrance": "alley_entrance", "pub back entrance": "pub_back_entrance"},
 }
 
 road_lab2 = {
@@ -124,32 +104,39 @@ room_lab2 = {
     "name": "Laboratory 2",
 
     "description":
-    """Standing in Lab 2, which is well-lit and tidy,
-there is Dr. Gavigan in front of you,  madly writing
-notes down that would likely be read in history books
-in the distant future. In the lab, the only cupboard
-you are not familiar with is the one at the top. In
-the corner lays a tray, usually used for beakers.
-There is a side entrance, which could take you to the
-park.""",
+    "",
 
-    "spots": {"centre": "lab2_centre", "cupboard": "top_cupboard", "beaker tray": "beaker_tray", "side entrance": "side_entrance"},
+    "spots": {"lab2 main entrance": "lab2_main_entrance", "tabletop": "spot_tabletop"},
     
 }
 
+room_contaminated_area = {
+    "name": "Contaminated Area",
+
+    "description":
+    """You're now standing in a dingy room, light has
+abandoned it, as the windows have been blackened out.
+A single, gas-powered lamp allows you to see. In the
+corner, held by chains, is a dead body. You step
+forward to investigate, and it springs to life - an
+undead. They clearly want to kill you, but cannot
+with the chains holding them back.
+This is supposed to be a safe haven! The undead aren't
+supposed to be within the walls - so why is she here?
+A second glance and you realise that the undead is, in
+fact, Dr. Gavigan's wife...
+Will you put her out of her misery?""",
+
+    "spots": {"contam area centre": "contam_area"}
+}
+    
 room_park = {
     "name": "Willow Park",
 
     "description":
-    """You are now in the once well-kept Willow Park.
-Although no longer well-kept, nature and life was found
-all around. A clear pond lies below an ancient looking
-Willow tree that bends above it. A lone bench sits,
-overlooking the now still pond. A hollybush lives in
-the corner, and you're surprised to see a kitten playing
-under it.""",
+    "",
     
-    "spots": {"centre": "park_centre", "bench": "spot_bench", "willow tree": "willow_tree", "side entrance": "lab2_side_entrance", "bush":  "spot_bush"},
+    "spots": {"park entrance": "park_entrance", "willow tree": "willow_tree", "p lab2 side entrance": "p_lab2_side_entrance"},
     
 }
 
@@ -160,10 +147,10 @@ road_windy = {
     """You are now walking along a windy, cobblestone
 path. Beside you are a row of trees that have bloomed
 in the lack of CO2 emissions - you even spot a pigeon
-and her nest. There's a box by someone's garden fence,
-half-open. """,
+and her nest. There's a box by the fence build around
+the houses, half-open.""",
 
-    "spots": {"centre": "windy_centre", "tree": "tree_base", "birds nest": "birds_nest", "garden fence": "garden_fence"},
+    "spots": {"w centre": "windy_centre", "birds nest": "birds_nest", "box": "spot_box"},
     
 
 }
@@ -172,18 +159,10 @@ room_library = {
     "name": "Library",
 
     "description":
-    """You are now inside the library - which
-has a few toppled over bookshelves. They have been
-collecting dust ever since the last residents left.
-A smell of damp lingers in the air; the roof seems to
-have been leaking. The mystery aisle is dark, you'd
-need some light to be able to see it. The fiction aisle
-is blocked off - someone must have made their last
-stand in it. At least the non-fiction aisle is already
-accessible for you.""",
+    "",
     
-    # A torch is needed to see in the non-fiction aisle.
-    "spots": {"centre": "library_centre", "entrance": "library_entrance", "fiction": "fiction_aisle", "mystery": "mystery_aisle", "non-fiction": "nonfic_aisle"},
+    # A torch is needed to see in the mystery aisle.
+    "spots": {"library side entrance": "l_side_entrance", "mystery aisle": "mystery_aisle"},
     
 }
 
@@ -205,4 +184,5 @@ rooms = {
     "library": room_library,
     "willow park": room_park,
     "laboratory 2": room_lab2,
+    "contaminated area": room_contaminated_area
 }
