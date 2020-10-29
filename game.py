@@ -1,6 +1,16 @@
 #!/usr/bin/python3
 from time import time
-from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time, header, footer, info
+from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time, header, footer,  go_wh, take_wh, eat_wh, taste_wh, go_ct, take_ct, eat_ct, taste_ct, taste_info, taste_ew, access_code_minigame, scrambled_word, morse_code_minigame
+
+global run
+global pub_code
+global library_code
+
+run = 0
+pub_code = 0
+library_code = 0
+
+
 def new_print_room(room, tools, food):
     header(room["name"].upper(), room["spot name"].upper(), str(inventory["health"]), str(energy_level()))
     print(room["map"])
@@ -16,7 +26,7 @@ def exit_leads_to(exits, direction):
 def energy_level():
     global inventory
     global old_time
-    t = 45
+    t = 20
     if (time() - old_time) >= t*10:
         inventory["energy"] -= 10
         old_time = time()
@@ -63,11 +73,15 @@ def is_valid_exit(exits, chosen_exit):
         return chosen_exit in exits
 
 def print_help():
-    return print_specialised_words()
+    print_specialised_words()
 
 
 def execute_go(direction):
     global current_room
+    global run
+    global library_code
+    global pub_code
+    
     if direction == "n":
         direction = "north"
     if direction == "e":
@@ -79,10 +93,55 @@ def execute_go(direction):
 
     if is_valid_exit(current_room["exits"], direction):
         for i, x in current_room["exits"].items():
-            if i == direction:
+            # Minigame in lab 1 (access_code)
+            
+            if i == direction and x == "lab 1 side entrance" or i == direction and x == "lab1 main entrance":
+                if run == 0:
+                    access_code_minigame()
+                    if True:
+                        if i == direction:
+                            run += 1
+                            current_room = spots[x]
+                    else:
+                        return
+                elif i == direction:
+                    current_room = spots[x]
+                    
+            # Minigame in in Library (Herold Close Section)
+
+            #elif i == direction and x == "contam area centre": # or i == direction and x == "mystery aisle":
+                #if library_code == 0:
+                    #morse_code_minigame()
+                    #if True:
+                        #if i == direction:
+                            #library_code += 1
+                            #current_room = spots[x]
+                    #else:
+                        #return
+                    
+            elif i == direction and x == "pub centre": #or i == direction and x == "alley front":
+                if pub_code == 0:
+                    scrambled_word()
+                    if True:
+                        if i == direction:
+                            pub_code += 1
+                            current_room = spots[x]
+                    else:
+                        return
+                elif i == direction:
+                    current_room = spots[x]
+            elif i == direction:
+                current_room = spots[x]
+                pass
+
+
+            # Minigame 3
+
+            
+            elif i == direction:
                 current_room = spots[x]
     else:
-        info("You cannot go there.", 70, 70)
+        go_ct("You cannot go there.")
 
 
 def is_valid_item(room_item, chosen_item):
@@ -102,13 +161,15 @@ def execute_take(item_id):
             if i == item_id:
                 inventory["tools"].append(i)
                 cRT.remove(i)
+                print("\n" + "-"*90 + "\n\nYou took the", item_id.capitalize())
+                take_ct("You cannot go there.")
     elif is_valid_item(current_room["food"], item_id):
         for i in current_room["food"]:
             if i == item_id:
                 inventory["food"].append(i)
                 cRF.remove(i)
     else:
-        info("You cannot take that.", 71, 70)
+        take_ct("You cannot take that.")
 
 
 def execute_drop(item_id):
@@ -127,7 +188,7 @@ def execute_drop(item_id):
                 inventory["food"].remove(i)
                 cRF.append(i)
     else:
-        info("You cannot drop that.", 71, 70)
+        take_ct("You cannot drop that.")
 
 
 def execute_eat(item_id):
@@ -145,7 +206,7 @@ def execute_eat(item_id):
                         inventory["energy"] += food[item_id]["energy"]
                 #print("\n" + "-"*90 + "\n\nYou ate the", item_id.capitalize(), "which had", food[item_id]["energy"], "energy.")
     else:
-        info("You cannot eat that.", 70, 70)
+        eat_ct("You cannot eat that.")
 
 def execute_taste(item_id):
     global inventory
@@ -153,13 +214,14 @@ def execute_taste(item_id):
     if is_valid_item(inventory["food"], item_id):
         for i in inventory["food"]:
             if i == item_id:
-                info("The item you tasted was goooood. Also, it has " + str(food[item_id]["energy"]) + " energy.", 88, 87)
+                i = "You tasted the", item_id.capitalize(), "and it is goooood. Also, it has", food[item_id]["energy"], "energy."
+                taste_info(str(i).strip("()''"))
     elif is_valid_item(inventory["tools"], item_id):
         for i in inventory["tools"]:
             if i == item_id:
-                info("Ewwww! Don't lick that, that is disgusting.", 82, 81)
+                taste_ew("Ewwww! Don't lick that, that is disgusting.")
     else:
-        info("You cannot taste that.", 71, 71)
+        taste_ct("You cannot taste that.")
 
 
 def execute_command(command):
@@ -168,7 +230,7 @@ def execute_command(command):
             execute_go(command[1])
         elif len(command[1]) <= 1:
             #print("\n" + "-"*90 + "\n\nGo where?")
-            info("Go where?", 65, 64)
+            go_wh("Go where?")
 
 
     elif command[0] == "take" or command[0] == "pick up":
@@ -176,48 +238,51 @@ def execute_command(command):
             execute_take(command[1])
         elif len(command[1]) <= 1:
             print("\n" + "-"*90 + "\n\nTake what?")
-            info("Take what?", 65, 65)
+            take_wh("Take what?")
 
     elif command[0] == "drop" or command[0] == "release":
         if len(command[1]) >= 1:
             execute_drop(command[1])
         elif len(command[1]) <= 1:
-            info("Drop what?", 65, 65)
+            take_wh("Drop what?")
 
     elif command[0] == "eat":
         if len(command[1]) >= 1:
             execute_eat(command[1])
         elif len(command[1]) <= 1:
             #print("\n" + "-"*90 + "\n\nEat what?")
-            info("Eat what?", 65, 64)
+            eat_wh("Eat what?")
 
     elif command[0] == "taste":
         if len(command[1]) >= 1:
             execute_taste(command[1])
         elif len(command[1]) <= 1:
-            info("Taste what?", 66, 65)
+            taste_wh("Taste what?")
 
     elif command[0] == "help":
-        info("These are the commands you can type to use: " + print_help(), 120, 119)
+        print_help()
 
     elif command[0] == "exit":
         check = normalise_input(input("Are you sure you want to exit the game. You will lose everything. (YES/NO): "), False)
         if check == "yes":
             exit()
         elif len(check) >= 0:
-            info("The Game Continues", 65, 65)
+            print("\n" + "-"*90 + "\n\nThe Game Continues")
 
     elif command[0] == "no" and len(command[1]) >= 1 :
-        info("What would you like to do with that item?", 81, 80)
+        print("\n" + "-"*90 + "\n\nWhat would you like to do with the:", command[1].capitalize())
 
     elif command[0] == "no" and len(command[1]) <= 1 :
-        info("Please type something useful", 65, 65)
+        print("\n" + "-"*90 + "\n\nPlease type something useful")
 
     else:
-        info("This makes no sense.", 70, 70)
+        print("\n" + "-"*90 + "\n\nThis makes no sense.")
 
 
-def user_input():
+def menu(exits, tools, food, inv):
+    # Display menu
+    #print_menu(exits, tools, food, inv)
+
     # Read player's input
     user_input = input("> ")
 
@@ -241,14 +306,18 @@ def difficulty(level):
     global inventory
     if level == "easy" or level == "e":
         inventory["health"] = 5
+        #print("\n" + "-"*90 + "\n\nyou chose easy, you have, 5 lives.")
         return True
     elif level == "medium" or level == "m":
         inventory["health"] = 3
+        #print("\n" + "-"*90 + "\n\nyou chose medium, you have, 3 lives.")
         return True
     elif level == "hard" or level == "h":
         inventory["health"] = 1
+        #print("\n" + "-"*90 + "\n\nyou chose hard, you have, 1 live, don't waste it.")
         return True
     elif len(level) >= 0:
+        #print("\n" + "-"*90 + "\n\nType a difficulty: easy, medium or hard.")
         return False
 
 
@@ -261,13 +330,14 @@ def main():
 
     # Main game loop
     while int(inventory["health"]) > 0:
+
+        #Prints UI
         new_print_room(current_room, current_room["tools"], current_room["food"])
 
+
         # Show the menu with possible actions and ask the player
-        #command = menu(current_room["exits"], current_room["tools"], current_room["food"], inventory)
-        command = user_input()
-
-
+        command = menu(current_room["exits"], current_room["tools"], current_room["food"], inventory)
+        
         # Execute the player's command
         execute_command(command)
 
