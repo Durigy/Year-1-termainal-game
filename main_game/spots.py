@@ -668,7 +668,7 @@ to the box and WEST goes straight to the library.""",
 |* |       x              |                                   x                                    |        |           |   x    | *|
 |* +------/\/-------------+------+---+------------+---------+------------+--------+------------+---|        |           |        | *|
 |* |       x                     |   |            |         |            |        |            |   |        +--------------/\/---+ *|
-|* |        HEROD CLOSE     x    |   |            |         |            |        |            |   |        |               x   |  *|
+|* |        HEROD CLOSE    x     |   |            |         |            |        |            |   |        |               x   |  *|
 |* |                             |   |   GARDEN   |         |   GARDEN   |        |   GARDEN   |   | ISIAH  |                   |  *|
 |* +--------------------+        |   |            |         |            |        |            |   | ROAD   |        PARK       |  *|
 |* |    x            x  |        | +-+------------+-+     +-+------------+-+    +-+------------+-+ |        /                   |  *|
@@ -1132,10 +1132,10 @@ laboratory. It's less rusted on the inside than
 out, but it still manages to open. You wonder how
 many times scientists and technicians of the past
 made their way through here.
-Leaving through it, to the SOUTH,
-will take you into the carpark. Going NORTH
-will take you to the syringe cupboard, and EAST
-back to the main entrance.""",
+Leaving through the door, to the SOUTH, will take
+you into the carpark. Going NORTH will take you
+to the syringe cupboard, and EAST back to the main
+entrance.""",
 
     "exits": {"south": "cp lab 1 side entrance", "north": "syringe cupboard", "east": "lab1 main entrance"},
 
@@ -1487,9 +1487,9 @@ pub_centre = {
     "spot name": "Pub Centre",
     
     "description":
-    """You can go NORTH onto Main
-Street, go EAST to get behind the bar or
-go SOUTH to leave into the alleyway.""",
+    """You can go NORTH onto Main Street,
+go EAST to get behind the bar or go
+SOUTH to leave into the alleyway.""",
     
     "exits": {"north": "pub front", "east": "behind bar", "south": "pub back entrance"},
 
@@ -1909,7 +1909,7 @@ To leave the room, go SOUTH.""",
 
     "food": ["pickles"],
 
-    "items needed": ["mask"],
+    "items needed": ["mask", "torch", "batteries"],
 
     "comment": "Keys, wallets, phone...ah sh*t, my mask!!",
 
@@ -2183,9 +2183,9 @@ l_side_entrance = {
     "spot name": "Library Side Entrance",
 
     "description":
-    """You're now standing in the
-centre of the library - drops of water
-drip from the tiles above.
+    """You're now standing by the entrance
+of the library - drops of water drip on your
+face from the tiles above.
 Going EAST will take you to the windy
 path and WEST to the mystery aisle.""",
     
@@ -2254,13 +2254,17 @@ mystery_aisle = {
     "description":
     """The mystery aisle is shrouded in
 darkness, you'll need a torch - but remember
-batteries aren't always included! There's also
+batteries aren't always included! Searching
+the shelves, you manage to find a rather dusty
+vial - labelled 'Substance 3'. There's a also
 a chocolate bar - you hope that it still tastes
 okay. The wrapper is covered in dust, there's
 even a small spider crawling across it, which
 only makes your spine shiver.
 You can go EAST to go back to the side
-entrance of the library. """,
+entrance of the library, or SOUTH to go onto
+Herod Close - if you haven't completed the
+mini-game you will need to do this!""",
 
     "exits": {"east": "library side entrance", "south": "library entrance"},
 
@@ -2268,10 +2272,9 @@ entrance of the library. """,
 
     "food": ["chocolate bar"],
 
-    "items needed": ["torch", "batteries"],
+    "items needed": [],
 
-    "comment": """Searching the shelves, you manage to
-finda rather dusty vial - labelled 'Substance 3'.""",
+    "comment": "",
 
     "passcode": [],
 
