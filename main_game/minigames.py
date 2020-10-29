@@ -1,156 +1,163 @@
-import random
+def user_interface(text):
+    lines = text.splitlines()
+    width = max(len(s) for s in lines)
+    res = ['┌' + '─' * width + '┐']
+    for s in lines:
+        res.append('│' + (s + ' ' * width)[:width] + '│')
+    res.append('└' + '─' * width + '┘')
+    return '\n'.join(res)
 
-def access_code_minigame():
+def go_wh(info):
+    left_remaining = 64 - len(info)
+    right_remaining = 65 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
 
-    #Setting up the variables values
-    run = 0
-    access_code = ""
-    completed = False
-    
-    #Information printed out to user
-    print("Looks as if the door is locked.")
-    print("Hmmm, it seems here that the keypad only has numbers five number!")
-    print("Maybe taking a guess isn't a bad shout?" + "\n")
+def take_wh(info):
+    left_remaining = 65 - len(info)
+    right_remaining = 65 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
 
-    #While loop that starts of the program and randomly generates a number
-    while completed is False:
-        number = random.randint(1,5)
-        number = int(number)
-        guesses = 1
+def eat_wh(info):
+    left_remaining = 64 - len(info)
+    right_remaining = 65 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
 
-        #Loop that checks whether the users guesses remains below 3
-        #and that they do not enter a value outside of 1-5.
-        while guesses < 5:
-            try:
-                guess = int(input("A guess between 1-5, shouldn't be too hard?:"))
-                if guess > 5:
-                    print("Hmmm, could've sworn there was only five numbers on the keypad" + "\n")
-                    guesses +=1
-                elif guess < 1:
-                    print("Didn't know you could have negative numbers on a keypad" + "\n")
-                    guesses +=1
-                else:
-
-                    #If/ Elif statements that check whether the user's guess is correct,
-                    #then provides hints.
-                    if guess == (number):
-                        print ("Ahaha! looks like we have got it right" + "\n")
-                        run += 1
-                        guesses = 5
-                        number = str(number)
-                        access_code = str(access_code) + number
-                        number = int(number)
-                        if run == 4:
-                            completed = True
-                    elif guesses > 2:
-                        print("INTRUDER ALERT,INTRUDER ALERT, RESETTING CODE NOW..." + "\n")
-                        return access_code_minigame()
-                    elif guess > number:
-                        print ("Something feels wrong about this guess. It must be lower" + "\n")
-                        guesses +=1
-                    elif guess < number:
-                        print ("Hmmm, My spidy senses tells me this number is higher" + "\n")
-                        guesses +=1
-            except ValueError:
-                print("There are only numbers on the keypad")
-
-    #Setting variable values and telling the user the access code.                
-    print("ACCESS CODE: " + access_code)                
-    code_rejected = 1
-    access_granted = False
-
-    #Loop to check whether the user has entered the correct value,
-    #and if not returning them back to the necessary section.
-    while access_granted is False:
-        user_input = input("Enter the code here:")
-        if user_input == access_code:
-            print("AT LAST WERE IN!")
-            access_granted = True
-            return
-        elif code_rejected > 2:
-            print("CODE REJECTED, RESETTING CODE NOW..." + "\n")
-            return access_code_minigame()
-        else:
-            print("CODE REJECTED")
-            code_rejected += 1
+def taste_wh(info):
+    left_remaining = 65 - len(info)
+    right_remaining = 66 - len(info)
+    text = user_interface("-" * left_remaining + "User Info: " + info + "-" * right_remaining)
+    print (text)
 
 
-#access_code_minigame()
+def go_ct(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print(text)
 
-def scrambled_word():
+def take_ct(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
 
-    #List of words
-    words = ["hello", "this", "test", "temp", "issue"]
-    #Randomly selecting a word from the list
-    random_number = random.randint(0, len(words))
-    random_word = words[random_number]
-    n = len(random_word)
-    chars = list(random_word)
-    #"Randomising it"
-    for i in range(0, n-1):
-        pos = random.randint(i+1,n-1)
-        chars[pos], chars[i] = chars[i], chars[pos]
-    result = ""
-    for i in range(n):
-        result += chars[i]
+def eat_ct(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
 
-    #Printing the result
-    print(result)
-    print()
-    print("Seems like some word we need to unscramble...")
-    completed = False
-    guesses = 1
-    #Looping around until the user unscrambles the word or runs out of attempts
-    while completed is False:
-        user_input = str(input("Doesn't seem that hard, I think we can word this one out:"))
-        if user_input == random_word:
-            print("Ahaha, were in! That wasn't so hard!")
-            return
-        elif guesses >4:
-            
-            print("BREECH DETECTED, RESETTING CODE...")
-            print()
-            return scrambled_word()
+def taste_ct(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
+
+def taste_info(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
+
+def taste_ew(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
+
+def game_con(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
+
+
+def header(room, spot, lives, energy):
+
+    length_remaining = 58 - len(room+spot)
+    left_remaining = 25 - len(energy)
+    remaining = 24 - len(lives)
+    text= "ROOM: " + room + " - " + spot + " " * length_remaining + "ENERGY: " + energy + " " * left_remaining + "LIVES: " + lives + " " * remaining
+
+    print (user_interface(text))
+
+def show_inventory(inventory):
+    #inventory = player_inventory["items"]
+    show_inventory = True
+
+    spaces_remaining = 130
+    display_inv = ""
+    split_inv = ""
+    remaining = ""
+    if show_inventory is True:
         
-        else:
-            guesses = guesses + 1
-            print("Hmmm, well we know its not that then.")
-                     
+        for i in inventory:
+            display_inv = display_inv +"," + i
+            if len(display_inv) > 130:
+                print("You can't hold that many items")
+                
+            elif len(i) < 130:
+                spaces_remaining = spaces_remaining - len(display_inv)
+                remaining = remaining + i + ", "
+        left_spaces = 130 - (25 + len(remaining))       
+        inventory_output = ("inventory (DROP/EAT/USE): " + remaining + split_inv + " " * left_spaces)
+        print(user_interface(inventory_output.upper()))
+        
+def show_items_in_room(current_room_items):
     
-#scrambled_word()
+    show_items_in_room = True
 
-def morse_code_minigame():
-    
-	#placeholder for the room that the player is supposed to go to next
-	next_room="Windy Path"
-	#list of the rooms and corresponding morse codes for the rooms
-	morse_roomlist=["Windy Path",".... . .-. --- -.. / -.-. .-.. --- ... .","herod street",".... . .-. --- -.. / ... - .-. 	. . -","carpark","-.-. .- .-. .--. .- .-. -.-",
-                        "labratory 1",".-.. .- -... --- .-. .- - --- .-. -.-- / .----","main street","-- .- .. -. / ... - .-. . . -","shop","... .... --- .--.",
-                        "the plough","- .... . / .--. .-.. --- ..- --. ....",	"alleyway",".- .-.. .-.. . -.-- .-- .- -.--","isiah road",".. ... .. .- .... / .-. --- .- -..",
-                        "laboratory 2",".-.. .- -.	.. --- .-. .- - --- .-. -.-- / ..---","willow park",".-- .. .-.. .-.. --- .-- / .--. .- .-. -.-",
-                        "windy path",".-- .. -. -.. -.-- / .--. .- - ....","library",".-.. .. -... .-. .- .-. -.--"]
-	
-	print("A	.-		B	-...\nC	-.-.		D	-..\nE	.		F	..-.\nG	--.		H	....\nI	..		J	.---\nK	-.-		L	.-..\nM	--		N	-.\nO	---		P	.--.\nQ	--.-		R	.-.\nS	...		T	-\nU	..-		V	...-\nW	.--		X	-..-\nY	-.--		Z	--..\n1	.----		2	..---\n")
-	
-	#searches for the next room in the list above and sets a variable to the element's position in the list
-	where=morse_roomlist.index(next_room.lower())
+    spaces_remaining = 130
+    display_room = ""
+    split_inv = ""
+    remaining = ""
+    if show_items_in_room is True:
+        
+        for i in current_room_items:
+            display_room = display_room +"," + i
+            if len(display_room) > 123:
+                spaces_remaining = spaces_remaining - len(display_room)
+                remaining = remaining + i + ","
+                
+            elif len(i) < 123:
+                spaces_remaining = spaces_remaining - len(display_room)
+                remaining = remaining + i + ","
+        left_spaces = 123 - (5 + len(remaining))
+        room_output = ("Room (Take): " + remaining + split_inv + " " * left_spaces)
+        print(user_interface(room_output.upper()))
 
-	#begins loop to run until the minigame is completed correctly
-	morse_complete=False
-	while morse_complete!=True:
-		#assigns a variable to the morse-translated version of the next room
-		morse_room=morse_roomlist[where+1]
-		#prints the morse version of the next room
-		print("\n", morse_room, "\n")
-		print("Appears to be some kind of code???")
-		#calls for user's answer
-		morse_attempt=input("Morse Code to be exact, Shoudln't be too difficult to work out:")
-		#checks the user's answer against the element in the correct position in the roomlist
-		if morse_attempt.lower()==morse_roomlist[where]:
-			morse_complete=True
-		else:
-			print("Hmmm, that doesn't seem right. \n")
+        
+def show_description(words):
+    #text= room["main location"]
+    words = words.split()
+    i = 0
+    split_sentences = ""
+    text = ""
+    line = " "
+    remaining_spaces = 130
+    for word in words:
+                        
+            text = text + " " + word
+            if len(text) > 117:
+                total_chars = len(text)
+                remaining_spaces = 130 - total_chars - i
+                total = 1 + i + len(text) + remaining_spaces      
+                split_sentences = split_sentences + "\n" + text + " " * remaining_spaces + " "
+                text = ""
+            elif len(text) < 111:
+                remaining_spaces = 131 -len(text)
+                left_over = text
+    text = (" ROOM DESCRIPTION: \n" + split_sentences + "\n" + left_over + " " * remaining_spaces)
+    print(user_interface(text))
 
-#morse_code_minigame()
+
+
+def footer(inventory, current_room_items, words):
+    show_inventory(inventory)
+    show_items_in_room(current_room_items)
+    show_description(words)
+
 
 
