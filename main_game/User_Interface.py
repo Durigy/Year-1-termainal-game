@@ -7,11 +7,66 @@ def user_interface(text):
     res.append('└' + '─' * width + '┘')
     return '\n'.join(res)
 
-def info(info):
+def go_wh(info):
     left_remaining = 64 - len(info)
     right_remaining = 65 - len(info)
     text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
     print (text)
+
+def take_wh(info):
+    left_remaining = 65 - len(info)
+    right_remaining = 65 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+
+def eat_wh(info):
+    left_remaining = 64 - len(info)
+    right_remaining = 65 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
+
+def taste_wh(info):
+    left_remaining = 65 - len(info)
+    right_remaining = 66 - len(info)
+    text = user_interface("-" * left_remaining + "User Info: " + info + "-" * right_remaining)
+    print (text)
+
+
+def go_ct(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print(text)
+
+def take_ct(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
+
+def eat_ct(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
+
+def taste_ct(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
+
+def taste_info(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
+
+def taste_ew(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
+
 
 def header(room, spot, lives, energy):
 
@@ -79,13 +134,14 @@ def show_description(words):
     for word in words:
                         
             text = text + " " + word
-            if len(text) > 120:
+            if len(text) > 117:
                 total_chars = len(text)
                 remaining_spaces = 130 - total_chars - i
                 total = 1 + i + len(text) + remaining_spaces      
                 split_sentences = split_sentences + "\n" + text + " " * remaining_spaces + " "
                 text = ""
-            elif len(text) < 130:
+            elif len(text) < 111:
+                remaining_spaces = 131 -len(text)
                 left_over = text
     text = (" ROOM DESCRIPTION: \n" + split_sentences + "\n" + left_over + " " * remaining_spaces)
     print(user_interface(text))

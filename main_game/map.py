@@ -127,7 +127,7 @@ A second glance and you realise that the undead is, in
 fact, Dr. Gavigan's wife...
 Will you put her out of her misery?""",
 
-    "spots": {"centre": "contam_area"}
+    "spots": {"contaminated area centre": "contam_area"}
 }
     
 room_park = {

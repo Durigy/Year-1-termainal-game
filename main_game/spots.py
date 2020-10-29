@@ -228,7 +228,7 @@ necessities have been stripped from them.
 To go into the carpark, go west. To go onto
 Main Street, go east.""",
 
-    "exits": {"east": "shop front", "west": "carpark entrance"},
+    "exits": {"east": "shop front", "west": "carpark entrance", "north": "lab 1 entrance"},
 
     "tools": [],
 
@@ -323,7 +323,7 @@ west to enter Herod Street.""",
 |* |       x              |                                   x                                    |        |           |   x    | *|
 |* +------/\/-------------+______----+------------+---------+------------+--------+------------+---|        |           |        | *|
 |* |       x                     |   |            |         |            |        |            |   |        +--------------/\/---+ *|
-|* |        HEROD CLOSE    x    |   |            |         |            |        |            |   |        |               x   |  *|
+|* |        HEROD CLOSE    x     |   |            |         |            |        |            |   |        |               x   |  *|
 |* |                             |   |   GARDEN   |         |   GARDEN   |        |   GARDEN   |   | ISIAH  |                   |  *|
 |* +--------------------+        |   |            |         |            |        |            |   | ROAD   |        PARK       |  *|
 |* |    x            x  |        | +-+------------+-+     +-+------------+-+    +-+------------+-+ |        /                   |  *|
@@ -392,7 +392,7 @@ east to infront of the alleyway.""",
 |* |       x              |                                   x                                    |        |           |   x    | *|
 |* +------/\/-------------+______----+------------+---------+------------+--------+------------+---|        |           |        | *|
 |* |       x                     |   |            |         |            |        |            |   |        +--------------/\/---+ *|
-|* |        HEROD CLOSE    x    |   |            |         |            |        |            |   |        |               x   |  *|
+|* |        HEROD CLOSE    x     |   |            |         |            |        |            |   |        |               x   |  *|
 |* |                             |   |   GARDEN   |         |   GARDEN   |        |   GARDEN   |   | ISIAH  |                   |  *|
 |* +--------------------+        |   |            |         |            |        |            |   | ROAD   |        PARK       |  *|
 |* |    x            x  |        | +-+------------+-+     +-+------------+-+    +-+------------+-+ |        /                   |  *|
@@ -461,7 +461,7 @@ west to the pub front.""",
 |* |       x              |                                   x                                    |        |           |   x    | *|
 |* +------/\/-------------+______----+------------+---------+------------+--------+------------+---|        |           |        | *|
 |* |       x                     |   |            |         |            |        |            |   |        +--------------/\/---+ *|
-|* |        HEROD CLOSE    x    |   |            |         |            |        |            |   |        |               x   |  *|
+|* |        HEROD CLOSE    x     |   |            |         |            |        |            |   |        |               x   |  *|
 |* |                             |   |   GARDEN   |         |   GARDEN   |        |   GARDEN   |   | ISIAH  |                   |  *|
 |* +--------------------+        |   |            |         |            |        |            |   | ROAD   |        PARK       |  *|
 |* |    x            x  |        | +-+------------+-+     +-+------------+-+    +-+------------+-+ |        /                   |  *|
@@ -774,7 +774,10 @@ spot_box = {
 
     "description":
         """You're now standing at fence of
-the houses, by a cardboard box. Inside, there
+the houses, looking up into the windows you
+can see some refugees, looking down - the light
+gone from their eyes. At the base of the fence
+is a cardboard box, half-open. Inside, there
 are a lot of beakers! These will come in handy.
 To go back to the path, go north. Going west will
 take you straight to the library, and east will
@@ -1054,10 +1057,10 @@ lab1_main_entrance = {
     "description":
         """You're now in lab 1, by the main
 entrance. To your north is a desk, and to your
-south is the side entrance - that leads to the
-carpark.""",
+west is the side entrance - that leads to the
+carpark. To go onto Herod Street, go east.""",
 
-    "exits": {"north": "desk", "south": "lab 1 side entrance"},
+    "exits": {"north": "desk", "west": "lab 1 side entrance", "east": "lab 1 entrance"},
 
     "tools": [],
 
@@ -1334,12 +1337,11 @@ top next to you, there's a singular clean
 mask kept in a pack, from a pandemic a
 decade ago.
 To go to the cleaning aisle, go west.
-Going north will take you back onto Main
-Street.""",
+Going north will take you back onto Main Street.""",
     
     "exits": {"north": "shop front", "west": "cleaning aisle"},
 
-    "tools": [],
+    "tools": ["mask"],
 
     "food": [],
 
@@ -1404,10 +1406,10 @@ want limescale remover in a zombie
 apocalypse, after all. Sure enough, there's
 a disinfectant product that would prove
 useful. Next to it, there is a lone pen.
-You can only go north from here, back to
+You can only go east from here, back to
 the shop entrance.""",
 
-    "exits": {"north": "shop entrance"},
+    "exits": {"east": "shop entrance"},
 
     "tools": ["cleaning product", "pen"],
 
@@ -1878,6 +1880,8 @@ contam_area = {
     
     "main description": rooms["contaminated area"]["description"],
 
+    "spot name": "Contaminated Area Centre",
+
     "description":
     """To leave the room, go south.""",
 
@@ -2093,7 +2097,7 @@ p_lab2_side_entrance = {
 but you still need a mask to get in the contaminated
 area. It's not a bad idea to have a mask on either!""",
     
-    "exits": {"north": "contaminated area centre", "south": "willow tree"},
+    "exits": {"north": "contam area centre", "south": "willow tree"},
 
     "tools": [],
 
@@ -2331,7 +2335,7 @@ spots = {
     "lab2 main entrance": lab2_main_entrance,
     "tabletop": spot_tabletop,
     # Contaminated Area
-    "contaminated area centre": contam_area,
+    "contam area centre": contam_area,
     # Park
     "park entrance": park_entrance,
     "willow tree": willow_tree,
