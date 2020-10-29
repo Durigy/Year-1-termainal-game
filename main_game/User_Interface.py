@@ -7,6 +7,11 @@ def user_interface(text):
     res.append('└' + '─' * width + '┘')
     return '\n'.join(res)
 
+def info(info):
+    left_remaining = 64 - len(info)
+    right_remaining = 65 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
 
 def header(room, spot, lives, energy):
 

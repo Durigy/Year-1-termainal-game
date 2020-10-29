@@ -55,7 +55,7 @@ used to be full of life. It now stands eerily
 still. You can't even hear the refugees in
 the houses.""",
 
-    "spots": {"shop front": "front_shop", "pub front": "front_pub", "alleyway front": "front_alley"},
+    "spots": {"shop front": "front_shop", "pub front": "front_pub", "alley front": "front_alley"},
     
 }
 

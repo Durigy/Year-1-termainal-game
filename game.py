@@ -1,61 +1,61 @@
 #!/usr/bin/python3
 from time import time
-from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time, header, footer #, user_interface
+from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time, header, footer, info
 
-def print_room_items(tools, food):
-    temp = []  # room tools
-    for i in tools:
-        temp.append(i)
-    rtool = ", ".join(temp)
-
-    temp = []  # room food
-    for i in food:
-        temp.append(i)
-    rfood = ", ".join(temp)
-
-    if rtool and rfood:
-        print("There is,", rtool + ",", rfood + ", in this part of the room.\n")
-    elif rtool:
-        print("There is,", rtool + ", in this part of the room.\n")
-    elif rfood:
-        print("There is,", rfood + ", in this part of the room.\n")
-    else:
-        print("There isn't anything in this part of the room.\n")
-
-
-def print_inventory_items(players_inverntory):
-    temp = []  # inventory tools
-    for i in players_inverntory["tools"]:
-        temp.append(i)
-    itool = ", ".join(temp)
-
-    temp = []  # inventory food
-    for i in inventory["food"]:
-        temp.append(i)
-    ifood = ", ".join(temp)
-
-    if itool and ifood:
-        print("You have,", itool + ",", ifood + ", in your inventory.\n")
-    elif itool:
-        print("You have,", itool + ", in your inventory.\n")
-    elif ifood:
-        print("You have,", ifood + ", in your inventory.\n")
-    else:
-        print("You don't have anything in you inventory.\n")
+# def print_room_items(tools, food):
+#     temp = []  # room tools
+#     for i in tools:
+#         temp.append(i)
+#     rtool = ", ".join(temp)
+#
+#     temp = []  # room food
+#     for i in food:
+#         temp.append(i)
+#     rfood = ", ".join(temp)
+#
+#     if rtool and rfood:
+#         print("There is,", rtool + ",", rfood + ", in this part of the room.\n")
+#     elif rtool:
+#         print("There is,", rtool + ", in this part of the room.\n")
+#     elif rfood:
+#         print("There is,", rfood + ", in this part of the room.\n")
+#     else:
+#         print("There isn't anything in this part of the room.\n")
 
 
-def print_room(room, tools, food):
-    print("\n" + "-"*90 + "\n")
-    print(room["name"].upper(), "-", room["spot name"].upper(), "\n")
-    # Display room description
-    print("--- Room Description ---\n" + room["main description"], "\n\n" + "--- Location Description ---\n" + room["description"], "\n")
+# def print_inventory_items(players_inverntory):
+#     temp = []  # inventory tools
+#     for i in players_inverntory["tools"]:
+#         temp.append(i)
+#     itool = ", ".join(temp)
+#
+#     temp = []  # inventory food
+#     for i in inventory["food"]:
+#         temp.append(i)
+#     ifood = ", ".join(temp)
+#
+#     if itool and ifood:
+#         print("You have,", itool + ",", ifood + ", in your inventory.\n")
+#     elif itool:
+#         print("You have,", itool + ", in your inventory.\n")
+#     elif ifood:
+#         print("You have,", ifood + ", in your inventory.\n")
+#     else:
+#         print("You don't have anything in you inventory.\n")
 
-    print_room_items(tools, food)
+
+# def print_room(room, tools, food):
+#     print("\n" + "-"*90 + "\n")
+#     print(room["name"].upper(), "-", room["spot name"].upper(), "\n")
+#     # Display room description
+#     print("--- Room Description ---\n" + room["main description"], "\n\n" + "--- Location Description ---\n" + room["description"], "\n")
+#
+#     print_room_items(tools, food)
 
 def new_print_room(room, tools, food):
     name = room["name"].upper(), "-", room["spot name"].upper()
-    print("\n" * 10)
-    header(room["name"].upper(), room["spot name"].upper(), str(inventory["health"]), str(inventory["energy"]))
+    #print("\n" * 10)
+    header(room["name"].upper(), room["spot name"].upper(), str(inventory["health"]), str(energy_level()))
     print(room["map"])
     footer(inventory["tools"] + inventory["food"], room["tools"] + room["food"], room["description"])
 
@@ -65,17 +65,16 @@ def print_player_info():
     energy_level()
 
 
-
 def exit_leads_to(exits, direction):
     return spots[exits[direction]]["name"]
 
-def print_exit(direction, leads_to):
-    print("GO " + direction.upper() + " to " + leads_to + ".")
+# def print_exit(direction, leads_to):
+#     print("GO " + direction.upper() + " to " + leads_to + ".")
 
 def energy_level():
     global inventory
     global old_time
-    t =20
+    t = 20
     if (time() - old_time) >= t*10:
         inventory["energy"] -= 10
         old_time = time()
@@ -107,48 +106,35 @@ def energy_level():
         inventory["energy"] -= 1
         old_time = time()
 
-
-    # if inventory["energy"] > 5:
-    #     print("Your energy level is:", inventory["energy"], "\n")
-    # elif inventory["energy"] > 3:
-    #     print("Your energy level is:", inventory["energy"], " - you need to eat before you die\n")
-    # elif inventory["energy"] > 0:
-    #     print("Your energy level is:", inventory["energy"], " - you are about to die\n")
-    # elif inventory["energy"] <= 0:
-    #     inventory["health"] -= 1
-    #     inventory["energy"] = 10
-    # if inventory["health"] > 1:
-    #     print("You have", inventory["health"], "lives left\n")
-    # else:
-    #     print("You have", inventory["health"], "life left\n")
-
     if inventory["health"] <= 0:
         death_screen()
         exit()
 
+    return inventory["energy"]
 
-def print_menu(exits, tools, food, inv):
 
-    print("You can:")
-
-    # Iterate over available exits
-    for direction in exits:
-        # Print the exit name and where it leads to
-        print_exit(direction, exit_leads_to(exits, direction))
-
-    for i in tools:
-        print("TAKE", i.upper(), "to take the", i + ".")
-
-    for i in food:
-        print("TAKE", i.upper(), "to take the", i + ".")
-
-    for i in inv["tools"]:
-        print("DROP", i.upper(), "to drop the", i + ".")
-
-    for i in inv["food"]:
-        print("DROP", i.upper(), "to drop the", i , "or\n" + "EAT", i.upper(), "to eat the", i + ".")
-
-    print("What would you like to do?")
+# def print_menu(exits, tools, food, inv):
+#
+#     print("You can:")
+#
+#     # Iterate over available exits
+#     for direction in exits:
+#         # Print the exit name and where it leads to
+#         print_exit(direction, exit_leads_to(exits, direction))
+#
+#     for i in tools:
+#         print("TAKE", i.upper(), "to take the", i + ".")
+#
+#     for i in food:
+#         print("TAKE", i.upper(), "to take the", i + ".")
+#
+#     for i in inv["tools"]:
+#         print("DROP", i.upper(), "to drop the", i + ".")
+#
+#     for i in inv["food"]:
+#         print("DROP", i.upper(), "to drop the", i , "or\n" + "EAT", i.upper(), "to eat the", i + ".")
+#
+#     print("What would you like to do?")
 
 
 def is_valid_exit(exits, chosen_exit):
@@ -172,10 +158,11 @@ def execute_go(direction):
     if is_valid_exit(current_room["exits"], direction):
         for i, x in current_room["exits"].items():
             if i == direction:
-                print("\n" + "-"*90 + "\n\nYou are moving to", spots[x]["name"].capitalize())
                 current_room = spots[x]
+                #info("You are moving to " + spots[x]["name"].capitalize())
     else:
-        print("\n" + "-"*90 + "\n\nYou cannot go there.")
+        #print("\n" + "-"*90 + "\n\nYou cannot go there.")
+        info("You cannot go there.")
 
 
 def is_valid_item(room_item, chosen_item):
@@ -264,7 +251,8 @@ def execute_command(command):
         if len(command[1]) >= 1:
             execute_go(command[1])
         elif len(command[1]) <= 1:
-            print("\n" + "-"*90 + "\n\nGo where?")
+            #print("\n" + "-"*90 + "\n\nGo where?")
+            info("Go where?")
 
 
     elif command[0] == "take" or command[0] == "pick up":
@@ -338,22 +326,19 @@ def difficulty(level):
     global inventory
     if level == "easy" or level == "e":
         inventory["health"] = 5
-        print("\n" + "-"*90 + "\n\nyou chose easy, you have, 5 lives.")
+        #print("\n" + "-"*90 + "\n\nyou chose easy, you have, 5 lives.")
         return True
     elif level == "medium" or level == "m":
         inventory["health"] = 3
-        print("\n" + "-"*90 + "\n\nyou chose medium, you have, 3 lives.")
+        #print("\n" + "-"*90 + "\n\nyou chose medium, you have, 3 lives.")
         return True
     elif level == "hard" or level == "h":
         inventory["health"] = 1
-        print("\n" + "-"*90 + "\n\nyou chose hard, you have, 1 live, don't waste it.")
+        #print("\n" + "-"*90 + "\n\nyou chose hard, you have, 1 live, don't waste it.")
         return True
     elif len(level) >= 0:
-        print("\n" + "-"*90 + "\n\nType a difficulty: easy, medium or hard.")
+        #print("\n" + "-"*90 + "\n\nType a difficulty: easy, medium or hard.")
         return False
-    # else:
-    #     print("\n" + "-"*90 + "\n\nType a difficulty: easy, medium or hard.")
-    #     return False
 
 
 
