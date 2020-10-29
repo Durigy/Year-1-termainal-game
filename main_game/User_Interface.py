@@ -67,6 +67,12 @@ def taste_ew(info):
     text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
     print (text)
 
+def game_con(info):
+    left_remaining = 70 - len(info)
+    right_remaining = 70 - len(info)
+    text = user_interface(" " * left_remaining + "User Info: " + info + " " * right_remaining)
+    print (text)
+
 
 def header(room, spot, lives, energy):
 
@@ -111,15 +117,15 @@ def show_items_in_room(current_room_items):
         
         for i in current_room_items:
             display_room = display_room +"," + i
-            if len(display_room) > 130:
+            if len(display_room) > 123:
                 spaces_remaining = spaces_remaining - len(display_room)
                 remaining = remaining + i + ","
                 
-            elif len(i) < 130:
+            elif len(i) < 123:
                 spaces_remaining = spaces_remaining - len(display_room)
                 remaining = remaining + i + ","
-        left_spaces = 130 - (5 + len(remaining))       
-        room_output = ("Take: " + remaining + split_inv + " " * left_spaces)
+        left_spaces = 123 - (5 + len(remaining))
+        room_output = ("Room (Take): " + remaining + split_inv + " " * left_spaces)
         print(user_interface(room_output.upper()))
 
         

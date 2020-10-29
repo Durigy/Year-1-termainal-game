@@ -49,6 +49,10 @@ def energy_level():
         inventory["energy"] -= 1
         old_time = time()
 
+    if inventory["energy"] <= 0:
+        inventory["health"] -= 1
+        inventory["energy"] = 10
+
     if inventory["health"] <= 0:
         death_screen()
         exit()
