@@ -261,14 +261,14 @@ def execute_command(command):
             info("Taste what?", 66, 65)
 
     elif command[0] == "help":
-        info("These are the commands you can type to use: " + print_help(), 120, 119)
+        info("These are the commands you can type to use: " + print_help(), 114, 114)
 
     elif command[0] == "exit":
         check = normalise_input(input("Are you sure you want to exit the game. You will lose everything. (YES/NO): "), False)
         if check == "yes":
             death_screen()
         elif len(check) >= 0:
-            info("The Game Continues", 65, 65)
+            info("The Game Continues", 69, 69)
 
     elif command[0] == "no" and len(command[1]) >= 1 :
         info("What would you like to do with that item?", 81, 80)

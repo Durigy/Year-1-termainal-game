@@ -3,7 +3,7 @@ from time import time
 from .items import tools, food
 
 # # specialised_words = ["go", "take","drop","look","open","close","enter","leave","menu","eat","north","east","south","west","inventory","use"] # don't think we need all these anymore
-specialised_words = ["go", "move", "take", "pick up","drop", "release", "look", "eat", "taste", "use", "help", "exit"]
+specialised_words = ["go", "move", "take", "pick up","drop", "release", "eat", "taste", "help", "exit"]
 direction = ["north","east","south","west", "n","e","s","w"]
 #difficulty = ["easy","medium","hard", "e","m","h"]
 
