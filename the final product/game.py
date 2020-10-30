@@ -2,19 +2,21 @@
 from time import time
 global run
 global pub_code
-from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_room, tools, food, inventory, old_time, header, footer, info, access_code_minigame, scrambled_word
+from main_game import rooms, roads, spots, print_specialised_words, normalise_input, current_spot, tools, food, inventory, old_time, header, footer, info, access_code_minigame, scrambled_word
 
 run = 0
 pub_code = 0
 
+# This function displays the current room/spot to the player
 def print_room(room):
     header(room["name"].upper(), room["spot name"].upper(), str(inventory["health"]), str(energy_level()))
     print(room["map"])
     footer(inventory["tools"] + inventory["food"], room["tools"] + room["food"], room["description"])
 
-def exit_leads_to(exits, direction):
-    return spots[exits[direction]]["name"]
+# def exit_leads_to(exits, direction):
+#     return spots[exits[direction]]["name"]
 
+# This function works out how much energy and health the player has left
 def energy_level():
     global inventory
     global old_time
@@ -60,13 +62,15 @@ def energy_level():
 
     return inventory["energy"]
 
-
+# This function determines where the given exit is real/exists or not
 def is_valid_exit(exits, chosen_exit):
         return chosen_exit in exits
 
+# This function displays the commands words on the screen for the user to see
 def print_help():
     return print_specialised_words()
 
+# This function determines if the player has the required item in their inventory to be able to move to that spot
 def spot_item_needed(room):
     n = 0
     for i in spots[room]["items needed"]:
@@ -80,8 +84,9 @@ def spot_item_needed(room):
     else:
         return False
 
+# This function moves the player around the maps from spot-to-spot
 def execute_go(direction):
-    global current_room
+    global current_spot
     global run
     global pub_code
 
@@ -94,20 +99,20 @@ def execute_go(direction):
     if direction == "w":
         direction = "west"
 
-    if is_valid_exit(current_room["exits"], direction):
-        if spot_item_needed(current_room["exits"][direction]):
-            for i, x in current_room["exits"].items():
+    if is_valid_exit(current_spot["exits"], direction):
+        if spot_item_needed(current_spot["exits"][direction]):
+            for i, x in current_spot["exits"].items():
                 if i == direction and x == "lab 1 side entrance" or i == direction and x == "lab1 main entrance":
                     if run == 0:
                         access_code_minigame()
                         if True:
                             if i == direction:
                                 run += 1
-                                current_room = spots[x]
+                                current_spot = spots[x]
                         else:
                             return
                     elif i == direction:
-                        current_room = spots[x]
+                        current_spot = spots[x]
 
                 elif i == direction and x == "pub centre":  # or i == direction and x == "alley front":
                     if pub_code == 0:
@@ -115,56 +120,59 @@ def execute_go(direction):
                         if True:
                             if i == direction:
                                 pub_code += 1
-                                current_room = spots[x]
+                                current_spot = spots[x]
                         else:
                             return
                     elif i == direction:
-                        current_room = spots[x]
+                        current_spot = spots[x]
                 elif i == direction:
-                    current_room = spots[x]
+                    current_spot = spots[x]
                     pass
                 elif i == direction:
-                    current_room = spots[x]
+                    current_spot = spots[x]
         else:
             info("You cannot go there with out the correct equipment.", 86, 85)
     else:
         info("You cannot go there.", 70, 70)
 
-
+# This function check if the given item is a real one and returns if it is or not
 def is_valid_item(room_item, chosen_item):
     for a in room_item:
         if chosen_item == a:
             return True
     return False
 
+# This function check is the player's inventory is Full or not
 def is_inventory_full():
     if len(inventory["tools"]+inventory["food"]) == 8:
         return True
     else:
         return False
 
+# This function checks if the desired spot requires an item to move to it
 def is_spot_critical(item):
-    for i in current_room["items needed"]:
+    for i in current_spot["items needed"]:
         if item == i:
             return True
     return False
 
+# This function removes the desired item from the spot location and places it in the player's inventory
 def execute_take(item_id):
     global inventory
-    global current_room
-    cRT = current_room["tools"]
-    cRF = current_room["food"]
-    if is_valid_item(current_room["tools"], item_id):
+    global current_spot
+    cRT = current_spot["tools"]
+    cRF = current_spot["food"]
+    if is_valid_item(current_spot["tools"], item_id):
         if not is_inventory_full():
-            for i in current_room["tools"]:
+            for i in current_spot["tools"]:
                 if i == item_id:
                     inventory["tools"].append(i)
                     cRT.remove(i)
         elif is_inventory_full():
             info("You're not that strong, you can't carry any more items.", 85, 84)
-    elif is_valid_item(current_room["food"], item_id):
+    elif is_valid_item(current_spot["food"], item_id):
         if not is_inventory_full():
-            for i in current_room["food"]:
+            for i in current_spot["food"]:
                 if i == item_id:
                     inventory["food"].append(i)
                     cRF.remove(i)
@@ -173,12 +181,12 @@ def execute_take(item_id):
     else:
         info("You cannot take that.", 71, 70)
 
-
+# This function removes the desired item from the player's inventory and places it in the spot location
 def execute_drop(item_id):
     global inventory
-    global current_room
-    cRT = current_room["tools"]
-    cRF = current_room["food"]
+    global current_spot
+    cRT = current_spot["tools"]
+    cRF = current_spot["food"]
     if is_valid_item(inventory["tools"], item_id):
         if not is_spot_critical(item_id):
             for i in inventory["tools"]:
@@ -198,7 +206,7 @@ def execute_drop(item_id):
     else:
         info("You cannot drop that.", 71, 70)
 
-
+# This function removes the desired food item from the player's inventory and increases the energy upto a maximum of 10
 def execute_eat(item_id):
     global inventory
     if is_valid_item(inventory["food"], item_id):
@@ -213,9 +221,10 @@ def execute_eat(item_id):
     else:
         info("You cannot eat that.", 70, 70)
 
+# This function allows the player to tell how much energy a desired food item contains
 def execute_taste(item_id):
     global inventory
-    global current_room
+    global current_spot
     if is_valid_item(inventory["food"], item_id):
         for i in inventory["food"]:
             if i == item_id:
@@ -227,7 +236,7 @@ def execute_taste(item_id):
     else:
         info("You cannot taste that.", 71, 71)
 
-
+# This function checks what command has been typed in
 def execute_command(command):
     if command[0] == "go" or command[0] == "move":
         if len(command[1]) >= 1:
@@ -279,7 +288,7 @@ def execute_command(command):
     else:
         info("This makes no sense.", 70, 70)
 
-
+# This function deals with the player's input and talks to the game_parser.py module
 def user_input():
     # Read player's input
     user_input = input("> ")
@@ -289,11 +298,12 @@ def user_input():
 
     return normalised_user_input
 
-
+# This function returns the spot the player will move to
 def move(exits, direction):
-    # Next room to go to
+    # Next spot to go to
     return spots[exits[direction]]
 
+# This function displays the Game over screen
 def death_screen():
     #this_time = time()
     text = """
@@ -364,6 +374,7 @@ def death_screen():
     #if (time() - this_time) == 10:
     exit()
 
+# This function check if the player has won and call the Winning screen function
 def game_won():
     n = 0
     final_items = ["substance1", "substance2", "substance3", "laptop", "beakers", "syringes bag", "cleaning product"]
@@ -375,6 +386,7 @@ def game_won():
             win_screen()
     return
 
+# This function displays the Winning screen
 def win_screen():
     text = """
     
@@ -443,6 +455,7 @@ def win_screen():
     print(text)
     exit()
 
+# This function checks what difficulty the play wants to play at and sent the help level appropriately
 def difficulty(level):
     global inventory
     if level == "easy" or level == "e":
@@ -456,6 +469,8 @@ def difficulty(level):
         return True
     elif len(level) >= 0:
         return False
+
+# This function displays the Start screen
 def display_head():
     head = """
     
@@ -523,15 +538,17 @@ def display_head():
 
 # This is the entry point of our program
 def main():
-    #from game_menu import Intro
+    # This part displays the start screen
     display_head()
+
+    # This part loops until the player picks a valid difficulty level
     dif_chosen = False
     while not dif_chosen:
         dif_chosen = difficulty(normalise_input(input("Please choose a difficulty: EASY, MEDIUM or HARD: "), False))
 
     # Main game loop
     while int(inventory["health"]) > 0:
-        print_room(current_room)
+        print_room(current_spot)
 
         # Execute the player's command
         execute_command(user_input())
