@@ -1,7 +1,7 @@
 Team 6 Game Project!
 
 
-# \*Disclamer: This project was imported from our University's GitLab so non of the git contributors are corret!\*
+# \*Disclamer: This project was imported from our University's GitLab so none of the git contributors are correct!\*
 
 #Couple quick updates on what still needs to be completed:
 
